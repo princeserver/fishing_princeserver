@@ -1,0 +1,18 @@
+Villager:
+  Recipe1:
+    sell:
+      type: FISHING_ROD
+      amount: 1
+      CutomModelData: 2
+      enchants:
+        DURABILITY: 3
+
+    buy:
+      type: EMERALD
+      amount: 64
+      CutomModelData:
+      enchants:
+
+
+
+

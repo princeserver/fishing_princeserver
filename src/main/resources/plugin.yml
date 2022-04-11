@@ -1,0 +1,46 @@
+name: Fishing_plugin
+version: '${version}'
+main: com.github.majisyou.fishing_plugin.Fishing_plugin
+api-version: 1.18
+authors: [ majisyou ]
+description: fishing_plugin
+
+commands:
+  test :
+    description: test
+    usage: test
+    permission: fishing_op
+
+
+  fishing_config_reload:
+    description: configをリロードするぜ
+    usage: 原因不明の失敗
+    permission: fishing_op
+
+  debug_Fishing_fish:
+    description: debug用だよ
+    usage: 原因不明の失敗
+    permission: fishing_op
+
+  fishing_rod:
+    description: cutom_fishが釣れる釣り竿を生成するよ
+    usage: 原因不明の失敗
+    permission: fisher_man
+
+  fish_shop:
+    description: shop
+    usage: 原因不明の失敗
+    permission: fisher_man
+
+  summon_fisherman:
+    description: summon_fisherman
+    usage: 原因不明の失敗
+    permission: fishing_op
+
+
+permissions:
+  fishing_op:
+    default: true
+
+  fisher_man:
+    default: true

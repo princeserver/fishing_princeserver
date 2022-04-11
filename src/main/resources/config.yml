@@ -1,0 +1,65 @@
+#バイオーム毎の().ymlファイルをつくる
+
+#使わないサーバネーム
+servername: Prince_server
+
+Time:
+  - morning
+  - day
+  - midnight
+  - night
+
+star:
+  #標準偏差1の正規分布で、中央値0の正規分布に基づく数値
+  #absで考えているから0基準
+  #0-1までで大体68％
+  #0-2までで大体95％
+  #0-3までで大体99.7％
+  #-1は68％　""
+  #1-2は27％ ☆
+  #2-3は4％　☆☆
+  #3-は0.3％　☆☆☆
+  none: 1
+  one: 2
+  two: 3
+  three:
+    #threeはtwo以降なので意味ない変数
+
+#Biome.ymlを作成するためのconfig
+Biome:
+  - FROZEN_OCEAN
+  - DEEP_OCEAN
+  - OCEAN
+  - WARM_OCEAN
+  - BEACH
+  - RIVER
+  - SNOWY
+  - PLAINS
+  - SWAMP
+  - MUSHROOM_FIELDS
+  - JUNGLE
+  - MOUNTAIN
+  - FOREST
+  - BADLANDS
+  - SAVANNA
+  - DESERT
+  - CAVES
+  - THE_END
+  - NETHER
+  - OTHER
+
+#各ランクの出現率をここで決める
+rank_number:
+  rank:
+    1: 45
+    2: 30
+    3: 15
+    4: 8
+    5: 2
+    6: 0
+    7: 0
+    8: 0
+    9: 0
+
+  #とりあえずレア度を9まで上げれるようにしてある
+  # レア度は下の方が高くなるように

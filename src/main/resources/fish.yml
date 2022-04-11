@@ -1,0 +1,43 @@
+#id:
+# 1:
+  #name: prince_fish
+  #cm: 10
+  #getExp:
+  #sell_price:
+  #time: all or midnight or day or morning or night
+  #texture_number:
+  #lore:
+  #これは(lore1)
+  #テスト用の(lore2)
+  #テキスト(lore3)
+  #だよ(lore4)
+Confirm_change: change1
+
+id:
+  1:
+    name: prince_fish
+    cm: 10
+    getExp: 0
+    sell_price: 0
+    time: all day
+    texture_number: 1
+    lore:
+      - これは(lore1)
+      - テスト用の(lore2)
+      - テキスト(lore3)
+      - だよ(lore4)
+
+  2:
+    name: prince_fish_2
+    cm: 50
+    getExp: 0
+    sell_price: 10
+    time: all day
+    texture_number: 2
+    lore:
+      - これは(lore1)
+      - テスト用の(lore2)
+      - テキスト(lore3)
+      - だよ(lore4)
+
+
