@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.UUID;
 
 public class Cmd_summon_villager implements CommandExecutor {
+    //フィッシングロッドや、魚を売る人を召喚するコマンド
 
     private  static Fishing_plugin plugin = Fishing_plugin.getInstance();
     public Cmd_summon_villager(Fishing_plugin plugin){plugin.getCommand("summon_fisherman").setExecutor(this);}

@@ -5,7 +5,6 @@ import com.github.majisyou.fishing_plugin.Config.CustomConfigSetting;
 import com.github.majisyou.fishing_plugin.commands.*;
 import com.github.majisyou.fishing_plugin.event.Player_Close;
 import com.github.majisyou.fishing_plugin.event.Player_Open;
-import com.github.majisyou.fishing_plugin.event.Player_click;
 import com.github.majisyou.fishing_plugin.event.Player_fishing;
 import com.github.majisyou.fishing_plugin.system.FishSystem;
 import org.bukkit.plugin.java.JavaPlugin;

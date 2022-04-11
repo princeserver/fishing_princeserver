@@ -22,19 +22,20 @@ public class Cmd_Debug_fish_catch implements CommandExecutor {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        Player player = (Player) sender;
-        FileConfiguration Biomeconfig = FishSystem.Biomeyml(player);
-        String rank = FishSystem.SelectRank();
-        BiomeConfigManager.loadBiome(Biomeconfig,rank);
-        List<String> fish;
-        FishSystem.Size_calculate();
-        try {
-            fish = Debug.Debug_Fish(Biomeconfig, rank,FishSystem.PlayerTime(player));
-        } catch (Exception e) {
-            plugin.getLogger().info("バイオームコンフィグの中のrank.id："+Biomeconfig.getString("rank1.id"));
-            plugin.getLogger().info("Biome.ymlにアクセスできなかったよ");
-            return true;
-        }
+//        Player player = (Player) sender;
+//        FileConfiguration Biomeconfig = FishSystem.Biomeyml(player);
+//        String rank = FishSystem.SelectRank();
+//        BiomeConfigManager.loadBiome(Biomeconfig,rank);
+//        List<String> fish;
+//        FishSystem.Size_calculate();
+//        try {
+//            fish = Debug.Debug_Fish(Biomeconfig, rank,FishSystem.PlayerTime(player));
+//        } catch (Exception e) {
+//            plugin.getLogger().info("バイオームコンフィグの中のrank.id："+Biomeconfig.getString("rank1.id"));
+//            plugin.getLogger().info("Biome.ymlにアクセスできなかったよ");
+//            return true;
+//        }
+        plugin.getLogger().info("今は機能していない");
         return true;
     }
 }

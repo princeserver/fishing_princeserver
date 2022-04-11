@@ -12,6 +12,7 @@ import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 
 public class Cmd_fishing_rod implements CommandExecutor {
+    //playerが持っているフィッシングロッドをカスタムフィッシングロッドにするコマンド
 
     Fishing_plugin plugin = Fishing_plugin.getInstance();
 

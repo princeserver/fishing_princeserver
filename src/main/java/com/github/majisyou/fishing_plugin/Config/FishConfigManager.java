@@ -6,6 +6,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import java.util.List;
 
 public class FishConfigManager {
+    //ここの説明いる？
 
     private static Fishing_plugin plugin = Fishing_plugin.getInstance();
     private static FileConfiguration config = new CustomConfigSetting(plugin,"fish.yml").getConfig();

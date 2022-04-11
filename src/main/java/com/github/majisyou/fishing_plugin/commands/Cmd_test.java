@@ -35,9 +35,10 @@ public class Cmd_test implements CommandExecutor {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-
-        Enchantment sell_enchant = Enchantment.getByName("DURABILITY");
-        plugin.getLogger().info(sell_enchant+"だよ");
+        //ここも今はつかわない
+//
+//        Enchantment sell_enchant = Enchantment.getByName("DURABILITY");
+//        plugin.getLogger().info(sell_enchant+"だよ");
 
         return true;
     }

@@ -6,6 +6,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import java.util.List;
 
 public class BiomeConfigManager {
+    //ここも説明しない！
 
     private static Fishing_plugin plugin = Fishing_plugin.getInstance();
 

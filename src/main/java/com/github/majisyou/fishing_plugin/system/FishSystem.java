@@ -20,11 +20,13 @@ import java.util.List;
 import java.util.Random;
 
 public class FishSystem {
+    //メインシステムが入ってる。主な動作はここに集約される
 
     private static Fishing_plugin plugin = Fishing_plugin.getInstance();
     private static List<String> Biome_list;
     private static int List_Length;
 
+    //config.ymlに設定されているBiomeコンフィグを作成するメソッド
     public static void setup_custom_config(Fishing_plugin plugin) throws Exception {
         //このバイオーム毎の.ymlを作成するメソッド
         if(new CustomConfigSetting(plugin).getConfig().contains("Biome")){
@@ -38,6 +40,7 @@ public class FishSystem {
         }
     }
 
+    //Biomeコンフィグを読み込むメソッドだが動かず
     public static void load_config(){
         //このバイオーム毎の.ymlをロードするメソッド
         Biome_list = ConfigManager.getBiome();
@@ -46,6 +49,7 @@ public class FishSystem {
         }
     }
 
+    //Fish.ymlから、色々な情報を取り込み、List上で保存する
     public static List<String> Fish(FileConfiguration config, String rank,String time){
         List<String> Fish = new ArrayList<>();
         FishSystem.FishListSetup(Fish);
@@ -85,11 +89,11 @@ public class FishSystem {
         return Fish;
     }
 
-    public static List<String> Fish_Size(List<String> fish){
-        List<String> fish_size = new ArrayList<>();
-        return  fish;
-    }
-
+    //フィッシングロッドを持っているかどうかを判定するメソッド
+    //フィッシングロッドを右手に持っていたらtrue
+    //フィッシングロッドを左手に持っていたらtrue
+    //フィッシングロッドを両手に持っていて、右手に持っているフィッシングロッドが
+    //カスタムモデルデータがあったらtrue
     public static boolean fishing_rod(Player player){
         //customモデルデータを持っていたらtrue、//cutomモデルデータを持っていなかったらfalse
         if(player.getInventory().getItemInMainHand().getType().equals(Material.AIR) && player.getInventory().getItemInOffHand().getType().equals(Material.AIR)) return false;
@@ -108,6 +112,8 @@ public class FishSystem {
         return false;
     }
 
+    //魚のサイズを計算するメソッド、
+    //fish.ymlのsizeに正規分布をかけて、大きさによって☆☆☆マークを付ける
     public static List<String> Size_calculate(){
         double base_random = new Random().nextGaussian();
         double abs_random;
@@ -133,6 +139,8 @@ public class FishSystem {
         return fish_size;
     }
 
+    //現在のマイクラ内の時間を判定するメソッド
+    //正直、マイクラ時間は合っているかどうかわからないから、要検討しなければならないところ
     public static boolean fishing_time(String Fishingtime,String fishtime){
         //Fishingtimeは釣れた時間
         //fishingtimeは釣れた魚の釣れる時間帯
@@ -141,6 +149,7 @@ public class FishSystem {
         return false;
     }
 
+    //代入する時にset(1,value)がnullが出てくるから、フィッシュを作るメソッド
     public static void FishListSetup(List<String> fish){
         if(fish.size()==0){
            fish.add("setup_capture");
@@ -159,6 +168,8 @@ public class FishSystem {
         }
     }
 
+    //Playerの現在のマイクラ時間を判定するメソッド
+    //正直、マイクラ時間は合っているかどうかわからないから、要検討しなければならないところ
     public static String PlayerTime(Player player){
         try{
             Long time = plugin.getServer().getWorld(player.getWorld().getName()).getTime();
@@ -176,6 +187,7 @@ public class FishSystem {
 
     }
 
+    //Fishアイテムを作成するメソッド。
     public static ItemStack MakeFish(List<String> fish,Player player){
         //setDisplayNameが非推奨らしいんですけど
         //これ以外にアイテムの名前を変えられるのを見つけられなかった
@@ -232,6 +244,7 @@ public class FishSystem {
         return Fish_Item;
     }
 
+    //Biomeコンフィグを作るメソッド
     public static FileConfiguration Biomeyml(Player player){
         //プレイヤーのいる場所のバイオームの名前を取ってきて、バイオームの名前のconfigを読み込む
         //返り値は読み込んだ.ymlファイル
@@ -242,6 +255,7 @@ public class FishSystem {
         return config;
     }
 
+    //重みを付けた確率を付けるためのメソッド
     public static int SumRanks(){
         //各rankの出現比を足した値を代入するメソッド.SelectRankメソッドでrankを選択するために使う
         int sum=0;
@@ -251,6 +265,7 @@ public class FishSystem {
         return sum;
     }
 
+    //config.ymlに設定した確率でランクを出すメソッド
     public static String SelectRank(){
         //概要
         //1~出現数MAX(基本は100)のランダムなセレクト番号を生成し、
@@ -306,10 +321,6 @@ public class FishSystem {
         }
 
         return "rankNull-"+Select_number;
-    }
-
-    public static void sell_fish(Inventory inventory){
-
     }
 
 }

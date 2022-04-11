@@ -15,6 +15,7 @@ import java.util.logging.Level;
 
 public class CustomConfigSetting {
     //Bukkitの中のconfig.ymlを操作する手順を模倣している
+    //customコンフィグが設定されている。
 
     private FileConfiguration config = null;
     private final File configFile;

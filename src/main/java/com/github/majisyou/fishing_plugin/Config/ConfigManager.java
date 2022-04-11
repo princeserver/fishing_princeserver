@@ -6,6 +6,7 @@ import org.bukkit.configuration.Configuration;
 import java.util.List;
 
 public class ConfigManager {
+    //ここも説明しない！
 
     private static Fishing_plugin plugin = Fishing_plugin.getInstance();
     private static Configuration config = plugin.getConfig();

@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Debug {
+    //色々デバッグするためのメソッド、正直全部いらないｗ
 
     private static Fishing_plugin plugin = Fishing_plugin.getInstance();
     private static List<String> Biome_list;

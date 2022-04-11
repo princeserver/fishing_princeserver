@@ -1,5 +1,6 @@
 package com.github.majisyou.fishing_plugin.commands;
 
+import com.github.majisyou.fishing_plugin.Config.BiomeConfigManager;
 import com.github.majisyou.fishing_plugin.Config.ConfigManager;
 import com.github.majisyou.fishing_plugin.Config.CustomConfigSetting;
 import com.github.majisyou.fishing_plugin.Config.FishConfigManager;
@@ -28,6 +29,7 @@ public class Cmd_reloadconfig implements CommandExecutor {
         FishSystem.load_config();
         plugin.getLogger().info("バイオーム.ymlを再読み込み");
 
+        ConfigManager.loadConfig();
 
         plugin.getLogger().info(ConfigManager.getServername()+"変更の確認");
         plugin.getLogger().info(FishConfigManager.getConfirm_change()+"変更の確認");

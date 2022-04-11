@@ -16,6 +16,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Villager {
+    //このクラスは、フィッシュを買い取ってくれる人と、釣り竿を売ってくれる村人を召喚するためのメソッドがある
+    //メインのメソッドは村人の取引をfisher_man.ymlから読み取って代入するコマンド
 
     private static Fishing_plugin plugin = Fishing_plugin.getInstance();
     private static FileConfiguration config = new CustomConfigSetting(plugin,"fisher_man.yml").getConfig();

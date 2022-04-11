@@ -41,6 +41,7 @@ public class Player_fishing implements Listener {
 
 
                 try {
+                    //フィッシュの作成！
                     fish = FishSystem.Fish(Biomeconfig, rank,FishSystem.PlayerTime(player));
                 } catch (Exception e) {
                     plugin.getLogger().info("バイオームコンフィグの中のrank.id："+Biomeconfig.getString(rank+".id")+"の"+rank);
@@ -49,11 +50,13 @@ public class Player_fishing implements Listener {
                 }
 
                 try {
-                    if (fish.get(0).equals("Catch!")) {
+                    if (fish.get(0).equals("Catch!")) { //釣ることが成功できたら
+                        //fishをプレイヤーにdropする。
                         player.getWorld().dropItem(player.getLocation(),FishSystem.MakeFish(fish,player));
                         event.getCaught().remove();
                         return;
                     }
+                    //fish.get(0)がescapeになったらイベントを無くす
                     event.getCaught().remove();
                     player.sendMessage("釣り糸が切れてしまった");
                     if(fish.get(0).equals("setup_capture")) plugin.getLogger().info("fishリストに代入できていない。fish.ymlの中身を確認してみて:setup_captureだったよ！");

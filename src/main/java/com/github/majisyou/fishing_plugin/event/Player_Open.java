@@ -26,6 +26,8 @@ public class Player_Open implements Listener {
         if(event.getInventory().getType().equals(InventoryType.MERCHANT)){
             if(event.getView().getTitle().equals(ChatColor.GREEN+"釣りマスター")){
                 if(player.isSneaking()){
+                    //シフトしながら釣りマスターを右クリックしたら
+                    //釣りプラグインで売るやつを開けるやつ
                     event.setCancelled(true);
                     FishGui.OpenInventory(player);
                 }

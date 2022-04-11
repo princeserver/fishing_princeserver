@@ -12,6 +12,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class Cmd_fishshop implements CommandExecutor {
     //このコマンドどうしようかなという気分
+    //正直、今は要らないコマンドだよ
 
     Fishing_plugin plugin = Fishing_plugin.getInstance();
 
