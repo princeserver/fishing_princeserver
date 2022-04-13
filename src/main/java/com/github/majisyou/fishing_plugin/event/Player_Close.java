@@ -44,8 +44,7 @@ public class Player_Close implements Listener {
             ItemStack emeraldBlock = new ItemStack(Material.EMERALD_BLOCK,emerald_value.get(1)); //エメラルドブロックの設定
             ItemStack Liquid_emerald = new ItemStack(Material.REPEATING_COMMAND_BLOCK,emerald_value.get(0)); //リッキドエメラルドの設定
             ItemMeta Liquid_emerald_Meta = Liquid_emerald.getItemMeta(); //リキッドエメラルド用のアイテムメタを取得する！
-            Liquid_emerald_Meta.setCustomModelData(1); //リッキドエメラルドのカスタムモデルデータの設定ここを弄る必要あり！！
-
+            Liquid_emerald_Meta.setCustomModelData(1000); //リッキドエメラルドのカスタムモデルデータの設定ここを弄る必要あり！！
 
             int drop_counter = 0;
 
