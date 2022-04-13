@@ -52,16 +52,48 @@ public class FishSystem {
     //Fish.ymlから、色々な情報を取り込み、List上で保存する
     public static List<String> Fish(FileConfiguration config, String rank,String time){
         List<String> Fish = new ArrayList<>();
+        List<String> fish_time = new ArrayList<>();
         FishSystem.FishListSetup(Fish);
         Fish.set(0,"which?");
+        Integer fish_id = 0;
+        int id = 0;
         if(config.contains(rank)){
             int FaileProbability = config.getInt(rank+".FaileProbability");
             for (int i=0;i <= FaileProbability;i++){
-                int id = new SecureRandom().nextInt(BiomeConfigManager.getFish_id().size())+1;
                 try {
-                    Integer fish_id = config.getIntegerList(rank+".id").get(id-1);
-                    FishConfigManager.LoadFishConfig(fish_id);
-                    if (FishSystem.fishing_time(time, FishConfigManager.getTime())){
+                    BiomeConfigManager.loadBiome(config,rank);
+                    id = new SecureRandom().nextInt(BiomeConfigManager.getFish_id().size())+1;
+                } catch (Exception e){
+                    plugin.getLogger().info("バイオームコンフィグの中の"+rank+".idが設定されてないかな");
+                    break;
+                }
+
+                try {
+                    fish_id = config.getIntegerList(rank + ".id").get(id - 1);
+                }catch (Exception e){
+                    plugin.getLogger().info(config.getName()+"の中の"+rank+".idが存在していないよ：" + id+"番目");
+                    return Fish;
+                }
+
+                try {
+                    //よほどのことがない限りここはnullにならない
+                    if(!(fish_id==0)){
+                        FishConfigManager.LoadFishConfig(fish_id);
+                        fish_time = FishConfigManager.getTime();
+                        if(fish_time.size()==0){
+                            plugin.getLogger().info("idが"+fish_id+"のtimeが無いよ");
+                            break;
+                        }
+                    }else {
+                        plugin.getLogger().info("指定された魚がidが0の魚だよ");
+                    }
+
+                }catch (Exception e){
+                    plugin.getLogger().info("fish.ymlの中のid"+fish_id+"が存在しないかどこか間違えてない？");
+                    return Fish;
+                }
+                if(!(fish_id==0)){
+                    if (FishSystem.time(time,fish_time)){
                         Fish.set(1,FishConfigManager.getName());
                         Fish.set(2,FishConfigManager.get_cm());
                         Fish.set(3,FishConfigManager.getGetExp());
@@ -72,14 +104,11 @@ public class FishSystem {
                         Fish.set(8,FishConfigManager.getLore().get(2));
                         Fish.set(9,FishConfigManager.getLore().get(3));
                         Fish.set(10,rank);
-                        Fish.set(11,FishConfigManager.getTime());
+                        Fish.set(11,"何も設定いらないかな、getTimeがStringの時代の名残、消すと色々番号変えないといけないから面倒くさいという気分になった");
                         Fish.set(12,fish_id.toString());
                         Fish.set(0,"Catch!");
                         return Fish;
                     }
-                }catch (Exception e){
-                    plugin.getLogger().info("プラグインの中のrank1.idが存在していないよ：→番目："+id);
-                    return Fish;
                 }
             }
             Fish.set(0,"Escaped");
@@ -87,6 +116,22 @@ public class FishSystem {
         }
         plugin.getLogger().info("プレイヤーのいるバイオームのコンフィグ中に何も設定されていないと思う");
         return Fish;
+    }
+
+    public static boolean time(String playertime,List<String> fish_time){
+        try {
+            if(!(fish_time.size()==0)){
+                for (String time : fish_time) {
+                    if (playertime.equals(time))
+                        return true;
+                }
+                return fish_time.get(0).equals("all day");
+            }
+            return false;
+        }catch (Exception e){
+            plugin.getLogger().info(fish_time+"の中身がないのでは？");
+            return false;
+        }
     }
 
     //フィッシングロッドを持っているかどうかを判定するメソッド
@@ -141,6 +186,7 @@ public class FishSystem {
 
     //現在のマイクラ内の時間を判定するメソッド
     //正直、マイクラ時間は合っているかどうかわからないから、要検討しなければならないところ
+    //fish.ymlを変えたから今は使っておらず
     public static boolean fishing_time(String Fishingtime,String fishtime){
         //Fishingtimeは釣れた時間
         //fishingtimeは釣れた魚の釣れる時間帯
@@ -149,7 +195,7 @@ public class FishSystem {
         return false;
     }
 
-    //代入する時にset(1,value)がnullが出てくるから、フィッシュを作るメソッド
+    //代入する時にset(1,value)がnullが出てくるから、フィッシュをあらかじめ作るメソッド
     public static void FishListSetup(List<String> fish){
         if(fish.size()==0){
            fish.add("setup_capture");
@@ -197,14 +243,14 @@ public class FishSystem {
         String cm = fish.get(2);
         String getExp = fish.get(3);
         String sell_price  = fish.get(4);
-        String time = fish.get(11);
+//        String time = fish.get(11);
         Integer texture_number= Integer.parseInt(fish.get(5));
         List<String> Lore = new ArrayList<>();
         String rank= fish.get(10);
         List<String> size_calculate = FishSystem.Size_calculate();
         String id = fish.get(12);
         double fish_size = (Math.floor((Double.parseDouble(cm) * Double.parseDouble(size_calculate.get(0)))*10))/10;
-        String star = size_calculate.get(1);
+        String star = size_calculate.get(1); //ここにsize_calculateメソッドで計算した☆の数を代入
         Lore.add(fish.get(6));
         Lore.add(fish.get(7));
         Lore.add(fish.get(8));

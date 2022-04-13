@@ -8,5 +8,1475 @@
 
 #rank2:
 
+Confirm_change: change2
+#id:
+# 1:
+#name: prince_fish
+#cm: 10
+#getExp:
+#sell_price:
+#time: all or midnight or day or morning or night
+#texture_number:
+#lore:
+#これは(lore1)
+#テスト用の(lore2)
+#テキスト(lore3)
+#だよ(lore4)
+
+id:
+  1:
+    name: ツチザメ
+    cm: 30
+    getExp: 0
+    sell_price: 2
+    time:
+      - all day
+    texture_number: 1
+    lore:
+      - 土のような肌を持つ小型のサメの一種。テツ
+      - ザメの幼生であり、出世魚としてもよく知ら
+      - れている。海岸付近の砂中に潜む昆虫を砂と
+      - 一緒に捕食する生態を持つ。
+
+  2:
+    name: イシザメ
+    cm: 30
+    getExp: 0
+    sell_price: 4
+    time:
+      - all day
+    texture_number: 2
+    lore:
+      - 石のような硬質な肌をもつテツザメの幼体。
+      - 比較的浅瀬に生息しており、小魚を主食とし
+      - ている。気性がやや荒いため、人が噛みつかれ
+      - ることも。
+
+  3:
+    name: テツザメ
+      cm: 150
+      getExp:
+      sell_price: 2
+      time:
+        - all day
+      texture_number: 3
+      lore:
+        -
+
+  4:
+    name: ウスクチイワシ
+      cm: 10
+      getExp:
+      sell_price: 4
+      time:
+        - all day
+      texture_number:
+      lore:
+        -
+
+  5:
+    name: コイクチイワシ
+      cm: 10
+      getExp:
+      sell_price: 10
+      time:
+        - all day
+      texture_number:
+      lore:
+        -
+
+  6:
+    name: ドウクツアンコウ
+      cm: 50
+      getExp:
+      sell_price: 2
+      time:
+        - morning
+        - day
+        - midnight
+      texture_number:
+      lore:
+        -
+
+  7:
+    name: ゲンセキガクレ
+      cm: 25
+      getExp:
+      sell_price: 2
+      time:
+        - all day
+      texture_number:
+      lore:
+        -
+
+  8:
+    name: コンゴウカクレ
+      cm: 40
+      getExp:
+      sell_price: 4
+      time:
+        - morning
+        - midnight
+        - night
+      texture_number:
+      lore:
+        -
+
+  9:
+    name: ツルギウオ
+      cm: 80
+      getExp:
+      sell_price: 3
+      time:
+        - all day
+      texture_number:
+      lore:
+        -
+
+  10:
+    name: サザナミガイ
+      cm: 15
+      getExp:
+      sell_price: 10
+      time:
+        - all day
+      texture_number:
+      lore:
+        -
+
+  11:
+    name: エンダートラウト
+      cm: 60
+      getExp:
+      sell_price:
+      time:
+        - all day
+      texture_number:
+      lore:
+        -
+
+  12:
+    name: ラバーフィッシュ
+      cm: 55
+      getExp:
+      sell_price:
+      time:
+        - all day
+      texture_number:
+      lore:
+        -
+
+  13:
+    name: クォーツアロワナ
+      cm: 35
+      getExp:
+      sell_price:
+      time:
+        - morning
+        - midnight
+        - night
+      texture_number:
+      lore:
+        -
+
+  14:
+    name: セイヒョウダコ
+      cm: 45
+      getExp:
+      sell_price:
+      time:
+        - all day
+      texture_number:
+      lore:
+        -
+
+  15:
+    name: サンドフィッシュ
+      cm: 30
+      getExp:
+      sell_price:
+      time:
+        - all day
+      texture_number:
+      lore:
+        -
+
+  16:
+    name: ネザーウォーター
+      cm: 40
+      getExp:
+      sell_price:
+      time:
+        - all day
+      texture_number:
+      lore:
+        -
+
+  17:
+    name: アカイシダイ
+      cm: 50
+      getExp:
+      sell_price:
+      time:
+        - morning
+        - day
+        - midnight
+      texture_number:
+      lore:
+        -
+
+  18:
+    name: ランタンイカ
+      cm: 40
+      getExp:
+      sell_price:
+      time:
+        - morning
+        - midnight
+        - night
+      texture_number:
+      lore:
+        -
+
+  19:
+    name: コンパクランタン
+      cm: 35
+      getExp:
+      sell_price:
+      time:
+        - morning
+        - midnight
+        - night
+      texture_number:
+      lore:
+        -
+
+  20:
+    name: オウゴンマダイ
+      cm: 30
+      getExp:
+      sell_price:
+      time:
+        - morning
+        - day
+        - midnight
+      texture_number:
+      lore:
+        -
+
+  21:
+    name: ヒカリホンモチ
+      cm: 25
+      getExp:
+      sell_price:
+      time:
+        - morning
+        - day
+        - midnight
+      texture_number:
+      lore:
+        -
+
+  22:
+    name: コーラスシイラ
+      cm: 55
+      getExp:
+      sell_price:
+      time:
+        - all day
+      texture_number:
+      lore:
+        -
+
+  23:
+    name: カオナシエイ
+      cm: 40
+      getExp:
+      sell_price:
+      time:
+        - all day
+      texture_number:
+      lore:
+        -
+
+  24:
+    name: ガーディアンモドキ
+      cm: 60
+      getExp:
+      sell_price:
+      time:
+        - all day
+      texture_number:
+      lore:
+        -
+
+  25:
+    name: ウミガラス
+      cm: 15
+      getExp:
+      sell_price:
+      time:
+        - morning
+        - midnight
+        - night
+      texture_number:
+      lore:
+        -
+
+  26:
+    name: シーファントム
+      cm: 45
+      getExp:
+      sell_price:
+      time:
+        - midnight
+        - night
+      texture_number:
+      lore:
+        -
+
+  27:
+    name: カワヒラメ
+      cm: 20
+      getExp:
+      sell_price:
+      time:
+        - all day
+      texture_number:
+      lore:
+        -
+
+  28:
+    name: エンバンスナガクレ
+      cm: 15
+      getExp:
+      sell_price:
+      time:
+        - all day
+      texture_number:
+      lore:
+        -
+
+  29:
+    name: コンブナマコ
+      cm: 15
+      getExp:
+      sell_price:
+      time:
+        - all day
+      texture_number:
+      lore:
+        -
+
+  30:
+    name: スポンジフグ
+      cm: 30
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  31:
+    name: シロツブアサリ
+      cm: 3
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  32:
+    name: レッドビート
+      cm: 25
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  33:
+    name: アローフィッシュ
+      cm: 30
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  34:
+    name: マリンビー
+      cm: 3
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  35:
+    name: アイフィッシュ
+      cm: 40
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  36:
+    name: ハニカムグラント
+      cm: 25
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  37:
+    name: カマクラガニ
+      cm: 5
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  38:
+    name: スカイマンタ
+      cm: 35
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  39:
+    name: ジャイアントマンタ
+      cm: 70
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  40:
+    name: コムギウミガメ
+      cm: 60
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  41:
+    name: アオイロフネガイ
+      cm: 10
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  42:
+    name: ソウルドレイク
+      cm: 30
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  43:
+    name: ツララダツ
+      cm: 45
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  44:
+    name: セツゲンマグロ
+      cm: 100
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  45:
+    name: ハチクイヤマメ
+      cm: 35
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  46:
+    name: ハチクイヤマメ
+      cm: 30
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  47:
+    name: アンザンガイ
+      cm: 6
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  48:
+    name: センリョクガイ
+      cm: 6
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  49:
+    name: カコウガイ
+      cm: 6
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  50:
+    name: クロックサーモン
+      cm: 55
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  51:
+    name: クロノスサーモン
+      cm: 70
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  52:
+    name: ホシクズザリガニ
+      cm: 10
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  53:
+    name: ウシガラカレイ
+      cm: 15
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  54:
+    name: マゼンタオクトパス
+      cm: 50
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  55:
+    name: コクリュウノツカイ
+      cm: 200
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  56:
+    name: ネザライマイマイ
+      cm: 13
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  57:
+    name: スイショウモドキ
+      cm: 40
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  58:
+    name: ネザーフィッシュ
+      cm: 30
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  59:
+    name: レンゴクマイマイ
+      cm: 13
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  60:
+    name: クロバリトラフグ
+      cm: 15
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  61:
+    name: サンミャククジラ
+      cm: 500
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  62:
+    name: イワクジラ
+      cm: 200
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  63:
+    name: ジゴククラゲ
+      cm: 20
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  64:
+    name: セイリュウクラゲ
+      cm: 3
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  65:
+    name: コンランガエル
+      cm: 4
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  66:
+    name: ネザーサーモン
+      cm: 40
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  67:
+    name: ヤミヨダケガニ
+      cm: 8
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  68:
+    name: マッシュフィッシュ
+      cm: 40
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  69:
+    name: ファングマイマイ
+      cm: 13
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  70:
+    name: フェアリースター
+      cm: 10
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  71:
+    name: ハラグロメバル
+      cm: 30
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  72:
+    name: アングラカサゴ
+      cm: 20
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  73:
+    name: セイリュウマダイ
+      cm: 20
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  74:
+    name: モンヨウハタハタ
+      cm: 25
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  75:
+    name: カイヨウワタリガニ
+      cm: 50
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  76:
+    name: シードシェル
+      cm: 5
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  77:
+    name: パンプキンシェル
+      cm: 10
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  78:
+    name: クロツブアサリ
+      cm: 5
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  79:
+    name: セイドウスズキ
+      cm: 80
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  80:
+    name: ジャドウニュウドウ
+      cm: 45
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  81:
+    name: コウオツイカ
+      cm: 25
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  82:
+    name: キバクカサゴ
+      cm: 18
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  83:
+    name: アメジストジェリー
+      cm: 15
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  84:
+    name: サンドジェリー
+      cm: 18
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  85:
+    name: サンドジェリー
+      cm: 180
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  86:
+    name: ハッショクニュウドウ
+      cm: 50
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  87:
+    name: リュウノオトシゴ
+      cm: 120
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  88:
+    name: シーリヴァイアサン
+      cm: 1000
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  89:
+    name: タルクラゲ
+      cm: 20
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  90:
+    name: キョダイクラゲ
+      cm: 70
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  91:
+    name: ボウダイクラゲ
+      cm: 140
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  92:
+    name: イルカモドキ
+      cm: 90
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  93:
+    name: ジョウオウイカ
+      cm: 400
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  94:
+    name: コウテイイカ
+      cm: 500
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  95:
+    name: マリンソルジャー
+      cm: 15
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  96:
+    name: シンソウマダイ
+      cm: 30
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  97:
+    name: ブレイズガー
+      cm: 110
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  98:
+    name: フロストクロコダイル
+      cm: 130
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  99:
+    name: セキカクマノミ
+      cm: 3
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  100:
+    name: コウゲンクリオネ
+      cm: 2
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  101:
+    name: グロウシャーク
+      cm: 140
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  102:
+    name: アンコククリオネ
+      cm: 2
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  103:
+    name: マンマルフグモドキ
+      cm: 20
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  104:
+    name: スカイリヴァイアサン
+      cm: 1000
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  105:
+    name: セキジュンウニ
+      cm: 5
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  106:
+    name: ハングリーピラルク
+      cm: 130
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  107:
+    name: シロハネニシン
+      cm: 15
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  108:
+    name: テッパンカワヒラメ
+      cm: 20
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  109:
+    name: ヤマブキカワナガレ
+      cm: 120
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  110:
+    name: ハナモチアンコウ
+      cm: 30
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  111:
+    name: セキタンスズキ
+      cm: 60
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  112:
+    name: カネナリガイ
+      cm: 25
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  113:
+    name: シンリンメザシ
+      cm: 40
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  114:
+    name: ヤツイロウナギ
+      cm: 40
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  115:
+    name: オウゴンマグロ
+      cm: 120
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  116:
+    name: コガネモチガニ
+      cm: 10
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  117:
+    name: ミツマタカジキ
+      cm: 110
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  118:
+    name: デザートフライ
+      cm: 30
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  119:
+    name: ドロモチガメ
+      cm: 20
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  120:
+    name: ヌマガエル
+      cm: 5
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  121:
+    name: アカハラカジキ
+      cm: 100
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  122:
+    name: ヒトツノイワシ
+      cm: 10
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  123:
+    name: サバクペンギン
+      cm: 30
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  124:
+    name: ウキクラゲ
+      cm: 20
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  125:
+    name: ハネガツオ
+      cm: 70
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  126:
+    name: マリンマッシュルーム
+      cm: 5
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  127:
+    name: サバクウキクラゲ
+      cm: 20
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  128:
+    name: セツゲンウキクラゲ
+      cm: 20
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  129:
+    name: マダライワガニ
+      cm: 5
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  130:
+    name: ナナイロイワガニ
+      cm: 5
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  131:
+    name: ナナイロイワガニ
+      cm: 20
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  132:
+    name: アレチガエル
+      cm: 5
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  133:
+    name: コケガメ
+      cm: 20
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  134:
+    name: ヒカリテトラ
+      cm: 5
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  135:
+    name: ヤマブキデンキガイ
+      cm: 10
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  136:
+    name: ピラニアスナガクレ
+      cm: 10
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  137:
+    name: コオリナマズ
+      cm: 30
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  138:
+    name: ハガクレマス
+      cm: 10
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  139:
+    name: ハガクレニジマス
+      cm: 10
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
+  140:
+    name: アダマンマイマイ
+      cm: 13
+      getExp:
+      sell_price:
+      time:
+      texture_number:
+      lore:
+        -
+
 
 

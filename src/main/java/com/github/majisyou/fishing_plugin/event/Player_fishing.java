@@ -4,8 +4,7 @@ import com.github.majisyou.fishing_plugin.Config.BiomeConfigManager;
 import com.github.majisyou.fishing_plugin.Fishing_plugin;
 import com.github.majisyou.fishing_plugin.system.FishSystem;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.entity.Entity;
-import org.bukkit.entity.Player;
+import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerFishEvent;
@@ -25,8 +24,19 @@ public class Player_fishing implements Listener {
 
     @EventHandler
     public void Fishing_main (PlayerFishEvent event){
-        if (event.getCaught()!= null){  //釣ることができた場合
+        if (event.getCaught()!= null){//釣ることができた場合
             Player player = event.getPlayer();
+            if(!(event.getHook().getHookedEntity()==null)){
+                return;
+            }
+
+            Item item_entity = (Item) event.getCaught();
+            ItemStack item = item_entity.getItemStack();
+
+            if(item.getType().isBlock()){
+                return;
+            }
+
             if(!(FishSystem.fishing_rod(player))) return; //右手か左手にカスタムモデルデータがある釣り竿を持っていた場合にtrueを返すmethodを使ってる。例外は少しあるけど
 
             if(FishSystem.fishing_rod(player)){
@@ -38,8 +48,6 @@ public class Player_fishing implements Listener {
                 BiomeConfigManager.loadBiome(Biomeconfig,rank);//ランクごとにコンフィグをロードする
 
                 List<String> fish;//返り値用の変数
-
-
                 try {
                     //フィッシュの作成！
                     fish = FishSystem.Fish(Biomeconfig, rank,FishSystem.PlayerTime(player));
@@ -61,7 +69,7 @@ public class Player_fishing implements Listener {
                     player.sendMessage("釣り糸が切れてしまった");
                     if(fish.get(0).equals("setup_capture")) plugin.getLogger().info("fishリストに代入できていない。fish.ymlの中身を確認してみて:setup_captureだったよ！");
                     if(fish.get(0).equals("which?")) plugin.getLogger().info("fishリストに代入できていない。fish.ymlの中身を確認してみて:whichだったよ！");
-                    plugin.getLogger().info(player.getWorld().getBiome(player.getLocation()) + ".ymlファイルの中に魚が設定されていないかもしれない");
+                    if(!(fish.get(0).equals("escape"))) plugin.getLogger().info(player.getWorld().getBiome(player.getLocation())+".ymlを確認してほしい");
                 }catch (Exception e){
                     plugin.getLogger().info(player.getWorld().getBiome(player.getLocation()) + ".ymlファイルの中に魚が設定されていないよ");
                     player.sendMessage("この場所では何も釣れないようだ");

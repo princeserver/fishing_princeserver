@@ -36,7 +36,9 @@ public class ConfigManager {
         Biome = config.getStringList("Biome");
         Time = config.getStringList("Time");
 
+        none = config.getDouble("star.none");
         one = config.getDouble("star.one");
+        two = config.getDouble("star.two");
 
         rank1 = config.getInt("rank_number.rank.1");
         rank2 = config.getInt("rank_number.rank.2");

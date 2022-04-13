@@ -1,9 +1,6 @@
 package com.github.majisyou.fishing_plugin.system;
 
-import com.github.majisyou.fishing_plugin.Config.BiomeConfigManager;
-import com.github.majisyou.fishing_plugin.Config.CustomConfigSetting;
-import com.github.majisyou.fishing_plugin.Config.FishConfigManager;
-import com.github.majisyou.fishing_plugin.Config.FishermanConfigManager;
+import com.github.majisyou.fishing_plugin.Config.*;
 import com.github.majisyou.fishing_plugin.Fishing_plugin;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -21,6 +18,7 @@ import java.time.Instant;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Debug {
     //色々デバッグするためのメソッド、正直全部いらないｗ
@@ -34,19 +32,35 @@ public class Debug {
         List<String> Fish = new ArrayList<>();
         FishSystem.FishListSetup(Fish);
         Fish.set(0, "which?");
+        Integer fish_id = 0;
         plugin.getLogger().info(Fish.get(0) + "を代入した");
         if (config.contains(rank)) {
             int FaileProbability = config.getInt(rank + ".FaileProbability");
             plugin.getLogger().info("FaileProbabilityを代入した");
-            for (int i = 0; i <= FaileProbability; i++) {
-                int id = new SecureRandom().nextInt(BiomeConfigManager.getFish_id().size()) + 1;
-                plugin.getLogger().info("idを決めたよ" + id);
+            for (int i = 0; i < FaileProbability; i++) {
                 try {
-                    Integer fish_id = config.getIntegerList(rank + ".id").get(id - 1);
-                    plugin.getLogger().info("rank.1からidをもらった" + fish_id);
-                    FishConfigManager.LoadFishConfig(fish_id);
+                    BiomeConfigManager.loadBiome(config,rank);
+                    int id = new SecureRandom().nextInt(BiomeConfigManager.getFish_id().size()) + 1;
+                    plugin.getLogger().info("idを決めたよ" + id);
+
+                    try {
+                        fish_id = config.getIntegerList(rank + ".id").get(id - 1);
+                    }catch (Exception e){
+                        plugin.getLogger().info(config.getName()+"の中の"+rank+".idが存在していないよ：" + id+"番目");
+                        return Fish;
+                    }
+
+                    plugin.getLogger().info(rank+"からidをもらった" + fish_id);
+
+                    try {
+                        //よほどのことがない限りここはnullにならない
+                        FishConfigManager.LoadFishConfig(fish_id);
+                    }catch (Exception e){
+                        plugin.getLogger().info("fish.ymlの中のid"+fish_id+"が存在しないかどこか間違えてない？");
+                        return Fish;
+                    }
                     plugin.getLogger().info("fishを呼び出したよ");
-                    if (FishSystem.fishing_time(time, FishConfigManager.getTime())) {
+                    if (FishSystem.time(time, FishConfigManager.getTime())) {
                         plugin.getLogger().info("タイムが合致したー");
                         Fish.set(1, FishConfigManager.getName());
                         plugin.getLogger().info(Fish.get(1) + "を代入した！");
@@ -68,7 +82,7 @@ public class Debug {
                         plugin.getLogger().info(Fish.get(9) + "を代入した！");
                         Fish.set(10, rank);
                         plugin.getLogger().info(Fish.get(10) + "を代入した！");
-                        Fish.set(11, FishConfigManager.getTime());
+                        Fish.set(11, "何も設定いらないかな、getTimeがStringの時代の名残、消すと色々番号変えないといけないから面倒くさいという気分になった");
                         plugin.getLogger().info(Fish.get(11) + "を代入した！");
                         Fish.set(12, fish_id.toString());
                         plugin.getLogger().info(Fish.get(12) + "を代入した！");
@@ -76,10 +90,10 @@ public class Debug {
                         plugin.getLogger().info(Fish.get(0) + "を代入した！");
                         return Fish;
                     }
-                } catch (Exception e) {
-                    plugin.getLogger().info("プラグインの中のrank1.idが存在していないよ：→番目：" + id);
-                    return Fish;
+                }catch (Exception e){
+                    plugin.getLogger().info("idを決めるときにエラー");
                 }
+
             }
             plugin.getLogger().info("合致するタイムが見つからなかった");
             Fish.set(0, "Escaped");
@@ -87,6 +101,14 @@ public class Debug {
         }
         plugin.getLogger().info("プレイヤーのいるバイオームのコンフィグ中に何も設定されていないと思う");
         return Fish;
+    }
+
+    public static FileConfiguration Debug_Biomeyml(String biome){
+        FileConfiguration config = new CustomConfigSetting(plugin,biome+".yml").getConfig();
+        if(!(config == null))return config;
+        plugin.getLogger().info("Biome.ymlが無かったから普通のconfig.ymlを読み込んだ");
+        config = new CustomConfigSetting(plugin).getConfig();
+        return config;
     }
 
     public static boolean fishing_rod(Player player) {
@@ -123,17 +145,18 @@ public class Debug {
         player.openInventory(test);
     }
 
-    public static ItemStack MakeFish(List<String> fish, Player player) {
+    public static ItemStack MakeFish(List<String> fish,String player_name) {
         //setDisplayNameが非推奨らしいんですけど
         //これ以外にアイテムの名前を変えられるのを見つけられなかった
         //この非推奨、のメソッド以外でできるやつが欲しい。
 
         ItemStack FishItem = new ItemStack(Material.COD, 1);
         ItemMeta FishMeta = FishItem.getItemMeta();
-        List<String> size_calculate = FishSystem.Size_calculate();
+        List<String> size_calculate = Debug.Size_calculate();
         plugin.getLogger().info(size_calculate.get(0) + size_calculate.get(1) + "ここに結果");
         double fish_size = Double.parseDouble(fish.get(2)) * Double.parseDouble(size_calculate.get(0));
         fish_size = (Math.floor(fish_size * 10)) / 10;
+        String fishing_time = ZonedDateTime.now().toString().substring(0,10);
 
         plugin.getLogger().info("魚の大きさ計算" + fish_size);
 
@@ -151,14 +174,22 @@ public class Debug {
         List<String> FishLore = new ArrayList<>();
 
         FishLore.add(ChatColor.WHITE + fish.get(6));
+        plugin.getLogger().info(ChatColor.WHITE + fish.get(6));
         FishLore.add(ChatColor.WHITE + fish.get(7));
+        plugin.getLogger().info(ChatColor.WHITE + fish.get(7));
         FishLore.add(ChatColor.WHITE + fish.get(8));
+        plugin.getLogger().info(ChatColor.WHITE + fish.get(8));
         FishLore.add(ChatColor.WHITE + fish.get(9));
+        plugin.getLogger().info(ChatColor.WHITE + fish.get(9));
         FishLore.add("");
         FishLore.add(ChatColor.WHITE + "  大きさ：" + fish_size + "cm");
-        FishLore.add(ChatColor.WHITE + "  時間  ：" + fish.get(11));
-        FishLore.add(ChatColor.WHITE + "  by " + player.getName());
+        plugin.getLogger().info(ChatColor.WHITE + "  大きさ：" + fish_size + "cm");
+        FishLore.add(ChatColor.WHITE + "  時間  ：" + fishing_time);
+        plugin.getLogger().info(ChatColor.WHITE + "  時間  ：" + fish.get(11));
+        FishLore.add(ChatColor.WHITE + "  by " + player_name);
+        plugin.getLogger().info(ChatColor.WHITE + "  by " + player_name);
         FishLore.add(ChatColor.WHITE + "  " + fish.get(10));
+        plugin.getLogger().info(ChatColor.WHITE + "  by " + player_name);
 
         FishMeta.setLore(FishLore);
         FishMeta.setCustomModelData(Integer.parseInt(fish.get(5)));
@@ -206,8 +237,6 @@ public class Debug {
                                 plugin.getLogger().info("Buy_CMDはnullじゃない");
                             }
 
-
-
                             //エンチャントを考える設定するやつ
 
                             SellItem.setItemMeta(SellItem_Meta);
@@ -232,5 +261,71 @@ public class Debug {
         }
 
         return recipes;
+    }
+
+    public static String PlayerTime(Player player){
+        try{
+            List<String> game_time = ConfigManager.getTime();
+            Long time = plugin.getServer().getWorld(player.getWorld().getName()).getTime();
+            plugin.getLogger().info(time+"の時間を持っているよ");
+            if(time>0 && time<=60000){
+                plugin.getLogger().info(game_time.get(0));
+                return game_time.get(0);
+            }
+            if(time>60000 && time<=120000) {
+                plugin.getLogger().info(game_time.get(1));
+                return game_time.get(1);
+            }
+            if(time>120000 && time<=180000){
+                plugin.getLogger().info(game_time.get(2));
+                return game_time.get(2);
+            }
+            if(time>180000 && time<=240000){
+                plugin.getLogger().info(game_time.get(3));
+                return game_time.get(3);
+            }
+            plugin.getLogger().info(player.getName()+"の現在時刻は"+time);
+            plugin.getLogger().info("虚数時間軸");
+            return "虚数時間軸";
+        }catch (Exception e){
+            plugin.getLogger().info("getWorld.getTimeはNullの可能性があるらしい");
+            plugin.getLogger().info(player.getName()+"がいるワールドは"+player.getWorld().getName()+"だよ");
+            return "Null出力";
+        }
+
+    }
+
+    public static List<String> Size_calculate(){
+        double base_random = new Random().nextGaussian();
+        double abs_random;
+        List<String> fish_size = new ArrayList<>();
+        abs_random = Math.abs(base_random)+1;
+        plugin.getLogger().info(base_random+"が基準");
+        plugin.getLogger().info(abs_random+"が係数");
+        fish_size.add(String.valueOf(abs_random));
+        if(base_random < ConfigManager.getNone()) {
+            plugin.getLogger().info(ConfigManager.getNone()+"ここはどう？");
+            //68％
+            plugin.getLogger().info("☆無し");
+            fish_size.add("");
+            return fish_size;
+        }
+        if(base_random<ConfigManager.getOne()) {
+            //27％
+            plugin.getLogger().info(ConfigManager.getOne()+"ここはどう？");
+            plugin.getLogger().info("☆");
+            fish_size.add("☆");
+            return fish_size;
+        }
+        if(base_random<ConfigManager.getTwo()) {
+            //4.7％
+            plugin.getLogger().info(ConfigManager.getTwo()+"ここはどう？");
+            plugin.getLogger().info("☆☆");
+            fish_size.add("☆☆");
+            return fish_size;
+        }
+        plugin.getLogger().info("☆☆☆");
+        fish_size.add("☆☆☆");
+        return fish_size;
     }
 }

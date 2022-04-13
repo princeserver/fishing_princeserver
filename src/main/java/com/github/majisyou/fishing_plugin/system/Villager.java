@@ -54,45 +54,35 @@ public class Villager {
                             Integer Buy_CMD = FishermanConfigManager.getBuy_CustomModelData();
                             ItemMeta SellItem_Meta = SellItem.getItemMeta();
                             ItemMeta BuyItem_Meta = BuyItem.getItemMeta();
-                            if(!(Sell_CMD==null)){
+                            if(!(Sell_CMD==null||Buy_CMD==0)){
                                 SellItem_Meta.setCustomModelData(Sell_CMD);
                             }
-                            if(!(Buy_CMD==null)){
+                            if(!(Buy_CMD==null||Buy_CMD==0)){
                                 BuyItem_Meta.setCustomModelData(Buy_CMD);
                             }
-
                             String sell_path = "Villager."+key+".sell.enchants";
                             String buy_path = "Villager."+key+".sell.enchants";
                             int sell_enchant_value;
                             int buy_enchant_value;
-
-                            plugin.getLogger().info(sell_path);
                             //ここnullが出るからtryで囲む必要がありか？
                             for (String enchant_Key : config.getConfigurationSection(sell_path).getKeys(false)) {
                                 Enchantment sell_enchant = Enchantment.getByName(enchant_Key);
                                 sell_enchant_value = config.getInt("Villager." + key + ".sell.enchants." + enchant_Key);
                                 if (!(sell_enchant == null)) {
                                     SellItem_Meta.addEnchant(sell_enchant, sell_enchant_value, true);
-                                }else {
-                                    plugin.getLogger().info("あれだよ、sellエンチャントが無いんだよ");
                                 }
                             }
-
-                            for (String enchant_Key : config.getConfigurationSection(buy_path).getKeys(false)) {
-                                Enchantment buy_enchant = Enchantment.getByName(enchant_Key);
-                                buy_enchant_value = config.getInt("Villager." + key + ".buy.enchants." + enchant_Key);
-                                if (!(buy_enchant == null)) {
+                            for (String enchant_Key2 : config.getConfigurationSection(buy_path).getKeys(false)) {
+                                Enchantment buy_enchant = Enchantment.getByName(enchant_Key2);
+                                buy_enchant_value = config.getInt("Villager." + key + ".buy.enchants." + enchant_Key2);
+                                if (!((buy_enchant == null)||buy_enchant_value==0)) {
                                     BuyItem_Meta.addEnchant(buy_enchant, buy_enchant_value, true);
-                                }else {
-                                    plugin.getLogger().info("あれだよ、buyエンチャントが無いんだよ");
                                 }
                             }
-
                             SellItem.setItemMeta(SellItem_Meta);
                             BuyItem.setItemMeta(BuyItem_Meta);
                             MerchantRecipe recipe = new MerchantRecipe(SellItem,2000000);
                             recipe.addIngredient(BuyItem);
-
                             recipes.add(recipe);
                         }else {
                             plugin.getLogger().info(key+"のbuy_amountが空か65以上だよ");

@@ -1,5 +1,6 @@
 package com.github.majisyou.fishing_plugin.commands;
 
+import com.github.majisyou.fishing_plugin.Config.BiomeConfigManager;
 import com.github.majisyou.fishing_plugin.Config.CustomConfigSetting;
 import com.github.majisyou.fishing_plugin.Config.FishermanConfigManager;
 import com.github.majisyou.fishing_plugin.Fishing_plugin;
@@ -36,6 +37,40 @@ public class Cmd_test implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         //ここも今はつかわない
+        Player player = (Player) sender;
+        FileConfiguration Biomeconfig = FishSystem.Biomeyml(player);//playerがいるバイオームのコンフィグをロードする
+
+        String rank = FishSystem.SelectRank();//ランクをランダムに選ぶ。偏りを設定して
+
+        BiomeConfigManager.loadBiome(Biomeconfig,rank);//ランクごとにコンフィグをロードする
+
+        List<String> fish;//返り値用の変数
+
+        try {
+            //フィッシュの作成！
+            fish = Debug.Debug_Fish(Biomeconfig, rank,FishSystem.PlayerTime(player));
+        } catch (Exception e) {
+            plugin.getLogger().info("バイオームコンフィグの中のrank.id："+Biomeconfig.getString(rank+".id")+"の"+rank);
+            plugin.getLogger().info(player.getWorld().getBiome(player.getLocation())+".ymlにアクセスできなかったよ");
+            return true;
+        }
+
+        try {
+            if (fish.get(0).equals("Catch!")) { //釣ることが成功できたら
+                //fishをプレイヤーにdropする。
+                player.getWorld().dropItem(player.getLocation(),Debug.MakeFish(fish,player.getName()));
+                return true;
+            }
+            //fish.get(0)がescapeになったらイベントを無くす
+            player.sendMessage("釣り糸が切れてしまった");
+            if(fish.get(0).equals("setup_capture")) plugin.getLogger().info("fishリストに代入できていない。fish.ymlの中身を確認してみて:setup_captureだったよ！");
+            if(fish.get(0).equals("which?")) plugin.getLogger().info("fishリストに代入できていない。fish.ymlの中身を確認してみて:whichだったよ！");
+            plugin.getLogger().info(player.getWorld().getBiome(player.getLocation()) + ".ymlファイルの中に魚が設定されていないかもしれない");
+        }catch (Exception e){
+            plugin.getLogger().info(player.getWorld().getBiome(player.getLocation()) + ".ymlファイルの中に魚が設定されていないよ");
+            player.sendMessage("この場所では何も釣れないようだ");
+            //その結果をキャンセル
+        }
 //
 //        Enchantment sell_enchant = Enchantment.getByName("DURABILITY");
 //        plugin.getLogger().info(sell_enchant+"だよ");

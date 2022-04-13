@@ -1,5 +1,6 @@
 Villager:
   Recipe1:
+    #右のアイテムねこれ
     sell:
       type: FISHING_ROD
       amount: 1
@@ -7,6 +8,7 @@ Villager:
       enchants:
         DURABILITY: 3
 
+    #左のアイテムねこれ
     buy:
       type: EMERALD
       amount: 64

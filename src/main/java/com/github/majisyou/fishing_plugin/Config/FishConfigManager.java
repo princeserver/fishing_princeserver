@@ -16,7 +16,7 @@ public class FishConfigManager {
     private static String getExp;
     private static String sell_price;
     private static List<String> lore;
-    private static String time;
+    private static List<String> time;
     private static String texture_number;
 
     private static String Confirm_change;
@@ -32,7 +32,7 @@ public class FishConfigManager {
         getExp = config.getString(file_path+"getExp");
         sell_price = config.getString(file_path+"sell_price");
         lore = config.getStringList(file_path+"lore");
-        time = config.getString(file_path+"time");
+        time = config.getStringList(file_path+"time");
         texture_number = config.getString(file_path+"texture_number");
     }
 
@@ -42,7 +42,7 @@ public class FishConfigManager {
     public static String getGetExp(){return getExp;}
     public static String getSell_price(){return sell_price;}
     public static List<String> getLore(){return lore;}
-    public static String getTime(){return time;}
+    public static List<String> getTime(){return time;}
     public static String getTexture_number(){return texture_number;}
 
 }

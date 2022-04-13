@@ -9,6 +9,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -22,20 +23,36 @@ public class Cmd_Debug_fish_catch implements CommandExecutor {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-//        Player player = (Player) sender;
-//        FileConfiguration Biomeconfig = FishSystem.Biomeyml(player);
-//        String rank = FishSystem.SelectRank();
-//        BiomeConfigManager.loadBiome(Biomeconfig,rank);
-//        List<String> fish;
-//        FishSystem.Size_calculate();
-//        try {
-//            fish = Debug.Debug_Fish(Biomeconfig, rank,FishSystem.PlayerTime(player));
-//        } catch (Exception e) {
-//            plugin.getLogger().info("バイオームコンフィグの中のrank.id："+Biomeconfig.getString("rank1.id"));
-//            plugin.getLogger().info("Biome.ymlにアクセスできなかったよ");
-//            return true;
-//        }
-        plugin.getLogger().info("今は機能していない");
+        FileConfiguration Biomeconfig = Debug.Debug_Biomeyml("BEACH");
+        String rank = FishSystem.SelectRank();
+        BiomeConfigManager.loadBiome(Biomeconfig,rank);
+        List<String> fish;
+        FishSystem.Size_calculate();
+
+        try {
+            fish = Debug.Debug_Fish(Biomeconfig, rank,"morning");
+        } catch (Exception e) {
+            plugin.getLogger().info("rank.id："+Biomeconfig.getString("rank1.id"));
+            plugin.getLogger().info("Biome.ymlにアクセスできなかったよ");
+            return true;
+        }
+        try {
+            if (fish.get(0).equals("Catch!")) { //釣ることが成功できたら
+                //fishをプレイヤーにdropする。
+                Debug.MakeFish(fish,"majisyou");
+                return true;
+            }
+            //fish.get(0)がescapeになったらイベントを無くす
+            if(fish.get(0).equals("setup_capture")) plugin.getLogger().info("fishリストに代入できていない。fish.ymlの中身を確認してみて:setup_captureだったよ！");
+            if(fish.get(0).equals("which?")) plugin.getLogger().info("fishリストに代入できていない。fish.ymlの中身を確認してみて:whichだったよ！");
+
+        }catch (Exception e){
+            //その結果をキャンセル
+            plugin.getLogger().info("null!!");
+        }
+
+
+
         return true;
     }
 }
