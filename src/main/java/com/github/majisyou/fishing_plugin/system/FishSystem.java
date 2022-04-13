@@ -258,7 +258,7 @@ public class FishSystem {
         String fishing_time = ZonedDateTime.now().toString().substring(0,10);
 
 
-        ItemStack Fish_Item = new ItemStack(Material.COD,1);
+        ItemStack Fish_Item = new ItemStack(Material.TROPICAL_FISH,1);
         ItemMeta FishItemMeta = Fish_Item.getItemMeta();
 
         if(FishItemMeta == null) return Fish_Item;

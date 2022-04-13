@@ -38,7 +38,7 @@ public class FishGui {
         if(inventory.getSize()==inventory_size){
             for (ItemStack itemStack : item) {
                 if (!(itemStack == null)) {
-                    if (itemStack.getType().equals(Material.COD)) {
+                    if (itemStack.getType().equals(Material.TROPICAL_FISH)) {
                         if (itemStack.getItemMeta().hasCustomModelData()) {
                             id = itemStack.getLore().get(0).substring(5);
                             try {
@@ -71,7 +71,7 @@ public class FishGui {
         if(inventory.getSize()==inventory_size){
             for (ItemStack itemStack : item) {
                 if (!(itemStack == null)) {
-                    if (!(itemStack.getType().equals(Material.COD))) {
+                    if (!(itemStack.getType().equals(Material.TROPICAL_FISH))) {
                         drops.add(itemStack);
                     } else if (!(itemStack.getItemMeta().hasCustomModelData())) {
                         drops.add(itemStack);

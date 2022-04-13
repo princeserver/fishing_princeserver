@@ -150,7 +150,7 @@ public class Debug {
         //これ以外にアイテムの名前を変えられるのを見つけられなかった
         //この非推奨、のメソッド以外でできるやつが欲しい。
 
-        ItemStack FishItem = new ItemStack(Material.COD, 1);
+        ItemStack FishItem = new ItemStack(Material.TROPICAL_FISH, 1);
         ItemMeta FishMeta = FishItem.getItemMeta();
         List<String> size_calculate = Debug.Size_calculate();
         plugin.getLogger().info(size_calculate.get(0) + size_calculate.get(1) + "ここに結果");
