@@ -19,12 +19,6 @@ public class FishConfigManager {
     private static List<String> time;
     private static String texture_number;
 
-    private static String Confirm_change;
-
-    public static void LoadFishConfig(){
-        Confirm_change = config.getString("Confirm_change");
-    }
-
     public static void LoadFishConfig(int id){
         String file_path = "id."+id+".";
         Fish_name = config.getString(file_path+"name");
@@ -36,7 +30,6 @@ public class FishConfigManager {
         texture_number = config.getString(file_path+"texture_number");
     }
 
-    public static String getConfirm_change(){return Confirm_change;}
     public static String get_cm(){return cm;}
     public static String getName(){return Fish_name;}
     public static String getGetExp(){return getExp;}
