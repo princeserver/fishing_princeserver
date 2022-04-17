@@ -21,19 +21,13 @@ public class Cmd_reloadconfig implements CommandExecutor {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        //reloadできてないっぽい？
         new CustomConfigSetting(plugin).reloadConfig();
         plugin.getLogger().info("config.ymlを再読み込み");
         new CustomConfigSetting(plugin,"fish.yml").reloadConfig();
         plugin.getLogger().info("fish.ymlを再読み込み");
         FishSystem.load_config();
         plugin.getLogger().info("バイオーム.ymlを再読み込み");
-
         ConfigManager.loadConfig();
-
-        plugin.getLogger().info(ConfigManager.getServername()+"変更の確認");
-        plugin.getLogger().info(FishConfigManager.getConfirm_change()+"変更の確認");
-
         return true;
     }
 }
