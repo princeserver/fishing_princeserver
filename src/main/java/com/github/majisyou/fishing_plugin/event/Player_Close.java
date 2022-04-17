@@ -53,7 +53,7 @@ public class Player_Close implements Listener {
                     if(!(emerald_value.get(0)==0)){
                         player.getInventory().setItem(i,Liquid_emerald);
                         emerald_value.set(0,0);
-                        //エメラルドをインベントリに入れる
+                        //リキッドエメラルドをインベントリに入れる
                     }
                     else if(!(emerald_value.get(1)==0)){
                         player.getInventory().setItem(i,emeraldBlock);
@@ -63,7 +63,7 @@ public class Player_Close implements Listener {
                     else if(!(emerald_value.get(2)==0)){
                         player.getInventory().setItem(i,emerald);
                         emerald_value.set(2,0);
-                        //リキッドエメラルドをインベントリに入れる
+                        //エメラルドをインベントリに入れる
                     }else{
                         if(drop_counter < drop_item.size()){
                             player.getInventory().setItem(i,drop_item.get(drop_counter));
@@ -75,10 +75,26 @@ public class Player_Close implements Listener {
                     }
                 }
             }
+
+            //もしインベントリが満杯の時アイテムをドロップさせる
+            if(!(emerald_value.get(0)==0)){
+                player.getWorld().dropItem(player.getLocation(),Liquid_emerald);
+                emerald_value.set(0,0);
+                //リキッドエメラルドをドロップする
+            }
+            else if(!(emerald_value.get(1)==0)){
+                player.getWorld().dropItem(player.getLocation(),emeraldBlock);
+                emerald_value.set(1,0);
+                //エメラルドブロックをドロップする
+            }
+            else if(!(emerald_value.get(2)==0)){
+                player.getWorld().dropItem(player.getLocation(),emerald);
+                emerald_value.set(2,0);
+                //エメラルドをドロップする
+            }
+
             for (;drop_counter<drop_item.size(); drop_counter++){
                 //空いてるインベントリが無かったらアイテムがドロップする
-                //ここさ、エメラルド関係はドロップしないからさ、売った後にインベントリを満杯にするとエメラルドが
-                //消えるっていうバグというか仕様になっている。変更はできると思う
                 player.getWorld().dropItem(player.getLocation(),drop_item.get(drop_counter));
             }
             if(!(sellvalue==0)){
@@ -86,7 +102,6 @@ public class Player_Close implements Listener {
             }else {
                 player.sendMessage("お魚を入れてね");
             }
-
         }
     }
 }
