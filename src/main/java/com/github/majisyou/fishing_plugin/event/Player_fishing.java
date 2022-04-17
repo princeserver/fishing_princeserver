@@ -60,7 +60,8 @@ public class Player_fishing implements Listener {
                 try {
                     if (fish.get(0).equals("Catch!")) { //釣ることが成功できたら
                         //fishをプレイヤーにdropする。
-                        player.getWorld().dropItem(player.getLocation(),FishSystem.MakeFish(fish,player));
+                        ItemStack FishItem = FishSystem.MakeFish(fish,player); //ItemStackを作成する
+                        player.getWorld().dropItem(player.getLocation(),FishItem);
                         event.getCaught().remove();
                         return;
                     }
