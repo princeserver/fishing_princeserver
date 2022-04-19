@@ -40,7 +40,7 @@ commands:
 
 permissions:
   fishing_op:
-    default: true
+    default: op
 
   fisher_man:
-    default: true
+    default: false
