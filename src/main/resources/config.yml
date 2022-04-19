@@ -6,8 +6,8 @@ servername: Prince_server
 Time:
   - morning
   - day
-  - midnight
   - night
+  - midnight
 
 star:
   #標準偏差1の正規分布で、中央値0の正規分布に基づく数値
