@@ -41,12 +41,16 @@ public class FishGui {
                     if (itemStack.getType().equals(Material.TROPICAL_FISH)) {
                         if (itemStack.getItemMeta().hasCustomModelData()) {
                             id = itemStack.getLore().get(0).substring(5);
+                            stack = itemStack.getAmount();
                             try {
                                 FishConfigManager.LoadFishConfig(Integer.parseInt(id));
-                                stack = itemStack.getAmount();
-                                sum_value += Integer.parseInt(FishConfigManager.getSell_price()) * stack;
                             } catch (Exception e) {
                                 plugin.getLogger().info("お魚のid間違えてない？" + id);
+                            }
+                            try {
+                                sum_value += Integer.parseInt(FishConfigManager.getSell_price()) * stack;
+                            }catch (Exception e){
+                                plugin.getLogger().info("id:"+id+"の値段設定が間違ってる"+FishConfigManager.getSell_price());
                             }
                         }
                     }
