@@ -27,8 +27,14 @@ public class Cmd_summon_villager implements CommandExecutor {
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
 
         if(sender instanceof Player){
-            List<MerchantRecipe> recipes = com.github.majisyou.fishing_plugin.system.Villager.MakeRecipes();
-            Player player = (Player) sender;
+            List<MerchantRecipe> recipes = new ArrayList<>();
+
+            try{
+                recipes = com.github.majisyou.fishing_plugin.system.Villager.MakeRecipes();
+            }catch (Exception e){
+                plugin.getLogger().info("fisherman.ymlを読み込んだレシピが作成できなかったよ");
+            }
+             Player player = (Player) sender;
 
             if(args.length == 0){
                 Entity Fisher_man = player.getWorld().spawnEntity(player.getLocation(),EntityType.VILLAGER);
