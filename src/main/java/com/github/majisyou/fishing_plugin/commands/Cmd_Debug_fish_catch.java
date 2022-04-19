@@ -28,9 +28,10 @@ public class Cmd_Debug_fish_catch implements CommandExecutor {
         BiomeConfigManager.loadBiome(Biomeconfig,rank);
         List<String> fish;
         FishSystem.Size_calculate();
+        Player player = (Player) sender;
 
         try {
-            fish = Debug.Debug_Fish(Biomeconfig, rank,"morning");
+            fish = Debug.Fish(player);
         } catch (Exception e) {
             plugin.getLogger().info("rank.id："+Biomeconfig.getString("rank1.id"));
             plugin.getLogger().info("Biome.ymlにアクセスできなかったよ");
@@ -39,9 +40,13 @@ public class Cmd_Debug_fish_catch implements CommandExecutor {
         try {
             if (fish.get(0).equals("Catch!")) { //釣ることが成功できたら
                 //fishをプレイヤーにdropする。
-                Debug.MakeFish(fish,"majisyou");
+                plugin.getLogger().info(fish.get(0)+"で成功");
+                ItemStack FishItem = Debug.MakeFish(fish,player);
+                plugin.getLogger().info(fish+"だよ");
+                player.getWorld().dropItem(player.getLocation(),FishItem);
                 return true;
             }
+
             //fish.get(0)がescapeになったらイベントを無くす
             if(fish.get(0).equals("setup_capture")) plugin.getLogger().info("fishリストに代入できていない。fish.ymlの中身を確認してみて:setup_captureだったよ！");
             if(fish.get(0).equals("which?")) plugin.getLogger().info("fishリストに代入できていない。fish.ymlの中身を確認してみて:whichだったよ！");
