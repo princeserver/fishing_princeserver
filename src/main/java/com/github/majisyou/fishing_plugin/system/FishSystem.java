@@ -50,71 +50,91 @@ public class FishSystem {
     }
 
     //Fish.ymlから、色々な情報を取り込み、List上で保存する
-    public static List<String> Fish(FileConfiguration config, String rank,String time){
+    public static List<String> Fish(Player player){
+        FileConfiguration config = FishSystem.Biomeyml(player);//playerがいるバイオームのコンフィグをロードする
+        String rank = FishSystem.SelectRank();//ランクをランダムに選ぶ。偏りを設定して
+        BiomeConfigManager.loadBiome(config,rank);//ランクごとにコンフィグをロードする
+        String time = FishSystem.PlayerTime(player);
+
         List<String> Fish = new ArrayList<>();
         List<String> fish_time = new ArrayList<>();
+        List<String> fish_lore = new ArrayList<>();
+
         FishSystem.FishListSetup(Fish);
         Fish.set(0,"which?");
         Integer fish_id = 0;
         int id = 0;
+
         if(config.contains(rank)){
-            int FaileProbability = config.getInt(rank+".FaileProbability");
-            for (int i=0;i <= FaileProbability;i++){
+            int FaileProbability = BiomeConfigManager.getFaileProbability();
+            for (int i=0;i < FaileProbability;i++){
                 try {
                     BiomeConfigManager.loadBiome(config,rank);
                     id = new SecureRandom().nextInt(BiomeConfigManager.getFish_id().size())+1;
                 } catch (Exception e){
-                    plugin.getLogger().info("バイオームコンフィグの中の"+rank+".idが設定されてないかな");
+                    plugin.getLogger().info(player.getWorld().getBiome(player.getLocation())+"コンフィグの"+rank+".idが設定されてないかな");
                     break;
                 }
 
                 try {
-                    fish_id = config.getIntegerList(rank + ".id").get(id - 1);
+                    fish_id = BiomeConfigManager.getFish_id().get(id - 1);
                 }catch (Exception e){
                     plugin.getLogger().info(config.getName()+"の中の"+rank+".idが存在していないよ：" + id+"番目");
                     return Fish;
                 }
 
                 try {
-                    //よほどのことがない限りここはnullにならない
                     if(!(fish_id==0)){
+
                         FishConfigManager.LoadFishConfig(fish_id);
                         fish_time = FishConfigManager.getTime();
+
                         if(fish_time.size()==0){
                             plugin.getLogger().info("idが"+fish_id+"のtimeが無いよ");
-                            break;
+                        }
+
+                        if(FishConfigManager.getLore().size()==4){
+                            fish_lore = FishConfigManager.getLore();
+                        }else {
+                            fish_lore.add("プラグイン上でバグが出てる");
+                            fish_lore.add("fishのidと");
+                            fish_lore.add("自分の現在地のバイオームを");
+                            fish_lore.add("サーバ主に教えて上げてね");
+                            plugin.getLogger().info("id"+fish_id+"の魚のloreが設定されていない");
                         }
                     }else {
                         plugin.getLogger().info("指定された魚がidが0の魚だよ");
+                    }
+
+                    if(!(fish_id==0)&&!(fish_time.size()==0)){
+                        if (FishSystem.time(time,fish_time)){
+                            Fish.set(1,FishConfigManager.getName());
+                            Fish.set(2,FishConfigManager.get_cm());
+                            Fish.set(3,FishConfigManager.getGetExp());
+                            Fish.set(4,FishConfigManager.getSell_price());
+                            Fish.set(5,FishConfigManager.getTexture_number());
+                            Fish.set(6,fish_lore.get(0));
+                            Fish.set(7,fish_lore.get(1));
+                            Fish.set(8,fish_lore.get(2));
+                            Fish.set(9,fish_lore.get(3));
+                            Fish.set(10,rank);
+                            Fish.set(11,"何も設定いらないかな、getTimeがStringの時代の名残、消すと色々番号変えないといけないから面倒くさいという気分になった");
+                            Fish.set(12,fish_id.toString());
+                            Fish.set(0,"Catch!");
+                            return Fish;
+                        }
                     }
 
                 }catch (Exception e){
                     plugin.getLogger().info("fish.ymlの中のid"+fish_id+"が存在しないかどこか間違えてない？");
                     return Fish;
                 }
-                if(!(fish_id==0)){
-                    if (FishSystem.time(time,fish_time)){
-                        Fish.set(1,FishConfigManager.getName());
-                        Fish.set(2,FishConfigManager.get_cm());
-                        Fish.set(3,FishConfigManager.getGetExp());
-                        Fish.set(4,FishConfigManager.getSell_price());
-                        Fish.set(5,FishConfigManager.getTexture_number());
-                        Fish.set(6,FishConfigManager.getLore().get(0));
-                        Fish.set(7,FishConfigManager.getLore().get(1));
-                        Fish.set(8,FishConfigManager.getLore().get(2));
-                        Fish.set(9,FishConfigManager.getLore().get(3));
-                        Fish.set(10,rank);
-                        Fish.set(11,"何も設定いらないかな、getTimeがStringの時代の名残、消すと色々番号変えないといけないから面倒くさいという気分になった");
-                        Fish.set(12,fish_id.toString());
-                        Fish.set(0,"Catch!");
-                        return Fish;
-                    }
-                }
             }
             Fish.set(0,"Escaped");
             return Fish;
+        }else {
+            plugin.getLogger().info(player.getWorld().getBiome(player.getLocation())+"コンフィグ中に"+rank+"が無い");
         }
-        plugin.getLogger().info("プレイヤーのいるバイオームのコンフィグ中に何も設定されていないと思う");
         return Fish;
     }
 
@@ -219,10 +239,10 @@ public class FishSystem {
     public static String PlayerTime(Player player){
         try{
             Long time = plugin.getServer().getWorld(player.getWorld().getName()).getTime();
-            if(time>0 && time<=60000) return ConfigManager.getTime().get(0);
-            if(time>60000 && time<=120000) return ConfigManager.getTime().get(1);
-            if(time>120000 && time<=180000) return ConfigManager.getTime().get(2);
-            if(time>180000 && time<=240000) return ConfigManager.getTime().get(3);
+            if(time>0 && time<=6000) return ConfigManager.getTime().get(0);
+            if(time>6000 && time<=12000) return ConfigManager.getTime().get(1);
+            if(time>12000 && time<=18000) return ConfigManager.getTime().get(2);
+            if(time>18000 && time<=24000) return ConfigManager.getTime().get(3);
             plugin.getLogger().info(player.getName()+"の現在時刻は"+time);
             return "虚数時間軸";
         }catch (Exception e){
@@ -244,11 +264,16 @@ public class FishSystem {
         String getExp = fish.get(3);
         String sell_price  = fish.get(4);
 //        String time = fish.get(11);
-        Integer texture_number= Integer.parseInt(fish.get(5));
+        int texture_number = 0;
         List<String> Lore = new ArrayList<>();
         String rank= fish.get(10);
         List<String> size_calculate = FishSystem.Size_calculate();
         String id = fish.get(12);
+        try {
+            texture_number = Integer.parseInt(fish.get(5));
+        }catch (Exception e){
+            plugin.getLogger().info(Fish_name+"で"+"id"+id+"のテクスチャ番号が設定されてない");
+        }
         double fish_size = (Math.floor((Double.parseDouble(cm) * Double.parseDouble(size_calculate.get(0)))*10))/10;
         String star = size_calculate.get(1); //ここにsize_calculateメソッドで計算した☆の数を代入
         Lore.add(fish.get(6));
@@ -257,12 +282,11 @@ public class FishSystem {
         Lore.add(fish.get(9));
         String fishing_time = ZonedDateTime.now().toString().substring(0,10);
 
-
         ItemStack Fish_Item = new ItemStack(Material.TROPICAL_FISH,1);
         ItemMeta FishItemMeta = Fish_Item.getItemMeta();
 
         if(FishItemMeta == null) return Fish_Item;
-        if(fish.get(10).equals("rank1"))FishItemMeta.setDisplayName(Fish_name+star);
+        if(fish.get(10).equals("rank1"))FishItemMeta.setDisplayName(ChatColor.WHITE+Fish_name+star);
         if(fish.get(10).equals("rank2"))FishItemMeta.setDisplayName(ChatColor.YELLOW+Fish_name+star);
         if(fish.get(10).equals("rank3"))FishItemMeta.setDisplayName(ChatColor.AQUA+Fish_name+star);
         if(fish.get(10).equals("rank4"))FishItemMeta.setDisplayName(ChatColor.LIGHT_PURPLE+Fish_name+star);
