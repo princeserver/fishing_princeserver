@@ -28,6 +28,8 @@ public class Cmd_reloadconfig implements CommandExecutor {
         FishSystem.load_config();
         plugin.getLogger().info("バイオーム.ymlを再読み込み");
         ConfigManager.loadConfig();
+        plugin.getLogger().info("fisher_man.ymlを読み込み");
+        new CustomConfigSetting(plugin,"fisher_man.yml").reloadConfig();
         return true;
     }
 }
