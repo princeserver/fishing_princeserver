@@ -4,16 +4,40 @@ Villager:
     sell:
       type: FISHING_ROD
       amount: 1
-      CutomModelData: 2
+      CustomModelData: 2
       enchants:
-        DURABILITY: 3
+        none: 0
 
     #左のアイテムねこれ
     buy:
       type: EMERALD
       amount: 64
-      CutomModelData:
+      CustomModelData:
       enchants:
+        none:
+
+
+  Recipe2:
+    sell:
+      type: FISHING_ROD
+      amount: 1
+      CustomModelData: 2
+      enchants:
+        DURABILITY: 10
+        LURE: 5
+        LUCK: 10
+
+    #左のアイテムねこれ
+    buy:
+      type: FISHING_ROD
+      amount: 1
+      CustomModelData:
+      enchants:
+        DURABILITY: 10
+        LURE: 5
+        LUCK: 10
+
+
 
 
 
