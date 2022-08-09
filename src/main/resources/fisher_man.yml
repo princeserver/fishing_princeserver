@@ -3,10 +3,11 @@ Villager:
     #右のアイテムねこれ
     sell:
       type: FISHING_ROD
+      DisplayName: 普通の釣り竿
       amount: 1
       CustomModelData: 2
       enchants:
-        none: 0
+        none: 1
 
     #左のアイテムねこれ
     buy:
@@ -20,6 +21,7 @@ Villager:
   Recipe2:
     sell:
       type: FISHING_ROD
+      DisplayName: 凄いの釣り竿
       amount: 1
       CustomModelData: 2
       enchants:

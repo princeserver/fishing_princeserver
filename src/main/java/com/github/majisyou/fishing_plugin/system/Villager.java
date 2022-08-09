@@ -22,17 +22,6 @@ public class Villager {
     private static Fishing_plugin plugin = Fishing_plugin.getInstance();
     private static FileConfiguration config = new CustomConfigSetting(plugin,"fisher_man.yml").getConfig();
 
-    public static void MakeFisher_man(Entity entity){
-        //これいらない？
-        if(entity instanceof org.bukkit.entity.Villager){
-            org.bukkit.entity.Villager villager = (org.bukkit.entity.Villager) entity;
-            List<MerchantRecipe> recipes = Villager.MakeRecipes();
-            villager.setRecipes(recipes);
-        }else {
-            return;
-        }
-    }
-    
     public static List<MerchantRecipe> MakeRecipes(){
         List<MerchantRecipe> recipes = new ArrayList<>();
 
@@ -66,7 +55,6 @@ public class Villager {
                             //ここnullが出るからtryで囲む必要がありか？
                             try{
                                 for (String enchant_Key : config.getConfigurationSection(sell_path).getKeys(false)) {
-                                    plugin.getLogger().info(enchant_Key+"を作成");
                                     Enchantment sell_enchant = Enchantment.getByName(enchant_Key);
                                     sell_enchant_value = config.getInt(sell_path + "." + enchant_Key);
                                     if (!(sell_enchant == null)&&!(sell_enchant_value==0)) {
@@ -74,12 +62,12 @@ public class Villager {
                                     }
                                 }
                             }catch (Exception e){
-                                plugin.getLogger().info(key+"のsellのエンチャントの中身が無いかな。noneに設定しないとnullが出るよ");
+                                plugin.getLogger().info("(FP)"+key+"のsellのエンチャントの中身が無いかな。noneに設定しないとnullが出るよ");
                             }
 
                             try {
                                 for (String enchant_Key2 : config.getConfigurationSection(buy_path).getKeys(false)) {
-                                    plugin.getLogger().info(enchant_Key2+"を作成");
+                                    plugin.getLogger().info("(FP)"+enchant_Key2+"を作成");
                                     Enchantment buy_enchant = Enchantment.getByName(enchant_Key2);
                                     buy_enchant_value = config.getInt(buy_path+"." + enchant_Key2);
                                     if (!((buy_enchant == null)||buy_enchant_value==0)) {
@@ -87,7 +75,7 @@ public class Villager {
                                     }
                                 }
                             }catch (Exception e){
-                                plugin.getLogger().info(key+"のbuyのエンチャントの中身が無いかな。noneに設定しないとnullが出るよ");
+                                plugin.getLogger().info("(FP)"+key+"のbuyのエンチャントの中身が無いかな。noneに設定しないとnullが出るよ");
                             }
 
                             SellItem.setItemMeta(SellItem_Meta);
@@ -96,16 +84,16 @@ public class Villager {
                             recipe.addIngredient(BuyItem);
                             recipes.add(recipe);
                         }else {
-                            plugin.getLogger().info(key+"のbuy_amountが空か65以上だよ");
+                            plugin.getLogger().info("(FP)"+key+"のbuy_amountが空か65以上だよ");
                         }
                     }else {
-                        plugin.getLogger().info(key+"のsell_amountが空か65以上だよ");
+                        plugin.getLogger().info("(FP)"+key+"のsell_amountが空か65以上だよ");
                     }
                 }else {
-                    plugin.getLogger().info(key+"buyItemのTypeが空だよ");
+                    plugin.getLogger().info("(FP)"+key+"buyItemのTypeが空だよ");
                 }
             }else {
-                plugin.getLogger().info(key+"sellItemのTypeが空だよ");
+                plugin.getLogger().info("(FP)"+key+"sellItemのTypeが空だよ");
             }
         }
         return recipes;

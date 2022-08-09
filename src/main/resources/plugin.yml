@@ -6,41 +6,27 @@ authors: [ majisyou ]
 description: fishing_plugin
 
 commands:
-  test :
-    description: test
-    usage: test
-    permission: fishing_op
-
-
   fishing_config_reload:
     description: configをリロードするぜ
     usage: 原因不明の失敗
-    permission: fishing_op
-
-  debug_Fishing_fish:
-    description: debug用だよ
-    usage: 原因不明の失敗
-    permission: fishing_op
+    permission: fisingPrince.op
 
   fishing_rod:
     description: cutom_fishが釣れる釣り竿を生成するよ
     usage: 原因不明の失敗
-    permission: fisher_man
+    permission: fisingPrince.rod
 
   fish_shop:
     description: shop
     usage: 原因不明の失敗
-    permission: fisher_man
+    permission: fisingPrince.shop
 
   summon_fisherman:
     description: summon_fisherman
     usage: 原因不明の失敗
-    permission: fishing_op
+    permission: fisingPrince.op
 
-
-permissions:
-  fishing_op:
-    default: op
-
-  fisher_man:
-    default: false
+  make_fish:
+    description: make_fish
+    usage: コマンドが失敗した
+    permission: fisingPrince.op

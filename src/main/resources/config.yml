@@ -25,29 +25,6 @@ star:
   three:
     #threeはtwo以降なので意味ない変数
 
-#Biome.ymlを作成するためのconfig
-Biome:
-  - FROZEN_OCEAN
-  - DEEP_OCEAN
-  - OCEAN
-  - WARM_OCEAN
-  - BEACH
-  - RIVER
-  - SNOWY
-  - PLAINS
-  - SWAMP
-  - MUSHROOM_FIELDS
-  - JUNGLE
-  - MOUNTAIN
-  - FOREST
-  - BADLANDS
-  - SAVANNA
-  - DESERT
-  - CAVES
-  - THE_END
-  - NETHER
-  - OTHER
-
 #各ランクの出現率をここで決める
 rank_number:
   rank:

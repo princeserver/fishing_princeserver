@@ -15,13 +15,25 @@
   #だよ(lore4)
 
 id:
+  0:
+    name: 謎の魚
+    cm: 1000
+    getExp: 0
+    sell_price: 0
+    rank: 0
+    texture_number: 0
+    lore:
+      - §k----§r
+      - §k----§r
+      - §k----§r
+      - §k----§r
+
   1:
     name: ツチザメ
     cm: 30
-    getExp: 0
+    getExp: 3
     sell_price: 2
-    time:
-      - all day
+    rank: 1
     texture_number: 1
     lore:
       - 土のような肌を持つ小型のサメの一種。テツ
@@ -31,10 +43,9 @@ id:
   2:
     name: イシザメ
     cm: 30
-    getExp: 0
+    getExp: 3
     sell_price: 4
-    time:
-      - all day
+    rank: 2
     texture_number: 2
     lore:
       - 石のような硬質な肌をもつテツザメの幼体。
@@ -44,10 +55,9 @@ id:
   3:
     name: テツザメ
     cm: 150
-    getExp:
+    getExp: 3
     sell_price: 10
-    time:
-      - all day
+    rank: 1
     texture_number: 3
     lore:
       - 金属質の肌を持つサメの一種。ナイフのよう
@@ -58,11 +68,10 @@ id:
   4:
     name: ウスクチイワシ
     cm: 10
-    getExp:
+    getExp: 3
     sell_price: 2
-    time:
-      - all day
-    texture_number:
+    rank: 1
+    texture_number: 4
     lore:
       - あまり光沢を持たないイワシの一種。群れず
       - に単独で行動する習性を持つ。火を通した時
@@ -72,11 +81,10 @@ id:
   5:
     name: コイクチイワシ
     cm: 10
-    getExp:
+    getExp: 3
     sell_price: 2
-    time:
-      - all day
-    texture_number:
+    rank: 1
+    texture_number: 5
     lore:
       - 水深の浅い海岸に生息するイワシの一種。3〜
       - 5匹程度の小規模な群れを作り海中を泳ぐ。ウ
@@ -86,13 +94,10 @@ id:
   6:
     name: ドウクツアンコウ
     cm: 50
-    getExp:
+    getExp: 3
     sell_price: 4
-    time:
-      - morning
-      - night
-      - midnight
-    texture_number:
+    rank: 2
+    texture_number: 6
     lore:
       - 光の届かない暗い洞窟に生息する中型の魚。
       - アンコウの名がついているが実際にはナマズ
@@ -102,11 +107,10 @@ id:
   7:
     name: ゲンセキガクレ
     cm: 25
-    getExp:
+    getExp: 3
     sell_price: 3
-    time:
-      - all day
-    texture_number:
+    rank: 1
+    texture_number: 7
     lore:
       - 様々な鉱石を殻にしているカニの一種。成長
       - と共に殻の部分の鉱石は精錬され固くなって
@@ -116,13 +120,10 @@ id:
   8:
     name: コンゴウカクレ
     cm: 40
-    getExp:
+    getExp: 3
     sell_price: 10
-    time:
-      - morning
-      - midnight
-      - night
-    texture_number:
+    rank: 3
+    texture_number: 8
     lore:
       - 百年以上の時を生きたゲンセキガクレの通称。
       - 非常に高い純度の鉱石の殻を持ち、その強度
@@ -132,11 +133,10 @@ id:
   9:
     name: ツルギウオ
     cm: 80
-    getExp:
+    getExp: 3
     sell_price: 3
-    time:
-      - all day
-    texture_number:
+    rank: 2
+    texture_number: 9
     lore:
       - 全身が鋭い刃状になっているタチウオの一種。
       - 剣として理想的な形状を持ち、うまく絞めれ
@@ -146,11 +146,10 @@ id:
   10:
     name: サザナミガイ
     cm: 15
-    getExp:
+    getExp: 3
     sell_price: 10
-    time:
-      - all day
-    texture_number:
+    rank: 1
+    texture_number: 10
     lore:
       - 波柄の模様を持つ二枚貝の一種。貝としては
       - 活発に動き、素早く貝を閉じることで昆虫や
@@ -160,11 +159,10 @@ id:
   11:
     name: エンダートラウト
     cm: 60
-    getExp:
-    sell_price:
-    time:
-      - all day
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 3
+    texture_number: 11
     lore:
       - 全身が黒いサケの一種。特殊な結晶構造の鱗
       - を持っており、上からだと透明になっている
@@ -174,11 +172,10 @@ id:
   12:
     name: ラバーフィッシュ
     cm: 55
-    getExp:
-    sell_price:
-    time:
-      - all day
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 12
     lore:
       - 水温と比べて異常に高い体温を持つ赤い魚。
       - 石炭を食べて体温を維持しているとされてい
@@ -188,13 +185,10 @@ id:
   13:
     name: クォーツアロワナ
     cm: 35
-    getExp:
-    sell_price:
-    time:
-      - morning
-      - midnight
-      - night
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 13
     lore:
       - 白くツルツルとした体表を持つアロワナの一
       - 種。昔は希少価値が高かったが、近年では繁殖
@@ -204,11 +198,10 @@ id:
   14:
     name: セイヒョウダコ
     cm: 45
-    getExp:
-    sell_price:
-    time:
-      - all day
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 14
     lore:
       - 流氷地帯に住むタコの一種。流氷と共に渡り
       - をし、流氷が溶けたら海底を這って氷雪地帯
@@ -218,11 +211,10 @@ id:
   15:
     name: サンドフィッシュ
     cm: 30
-    getExp:
+    getExp: 3
     sell_price: 2
-    time:
-      - all day
-    texture_number:
+    rank: 1
+    texture_number: 15
     lore:
       - 浅瀬に住む砂模様のヒラメの一種。普段は砂
       - に付着したプランクトンを食べて生活してい
@@ -232,11 +224,10 @@ id:
   16:
     name: ネザーウォーター
     cm: 40
-    getExp:
+    getExp: 3
     sell_price: 4
-    time:
-      - all day
-    texture_number:
+    rank: 2
+    texture_number: 16
     lore:
       - ネザーウォートのような膨らんだ頭部を持つ
       - ウツボの一種。膨らんだ頭部には栄養が多く
@@ -246,13 +237,10 @@ id:
   17:
     name: アカイシダイ
     cm: 50
-    getExp:
+    getExp: 3
     sell_price: 2
-    time:
-      - morning
-      - day
-      - night
-    texture_number:
+    rank: 1
+    texture_number: 17
     lore:
       - 体表に赤色の独特な模様があるタイの一種。
       - 模様を動かしたり、光らせたりすることで仲
@@ -262,13 +250,10 @@ id:
   18:
     name: ランタンイカ
     cm: 40
-    getExp:
-    sell_price:
-    time:
-      - morning
-      - midnight
-      - night
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 18
     lore:
       - 上部の外套膜がランタンのように光るイカの
       - 一種。暗い洞窟などに生息し、光によってきた
@@ -278,13 +263,10 @@ id:
   19:
     name: コンパクランタン
     cm: 35
-    getExp:
-    sell_price:
-    time:
-      - morning
-      - midnight
-      - night
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 19
     lore:
       - 青色に光るランタンイカの亜種。普通のラン
       - タンイカと比べると光が弱いが、陸に上げて
@@ -294,13 +276,10 @@ id:
   20:
     name: オウゴンマダイ
     cm: 30
-    getExp:
-    sell_price:
-    time:
-      - morning
-      - day
-      - night
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 3
+    texture_number: 20
     lore:
       - 体表が黄金色に輝くタイの一種。鱗には微量
       - ながらも金が含まれており、レアメタル等の
@@ -310,13 +289,10 @@ id:
   21:
     name: ヒカリホンモチ
     cm: 25
-    getExp:
-    sell_price:
-    time:
-      - morning
-      - day
-      - night
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 3
+    texture_number: 21
     lore:
       - 虹色に光る本のような見た目のエイの一種。
       - ページのように見えるエラには揺れ動く模様
@@ -326,11 +302,10 @@ id:
   22:
     name: コーラスシイラ
     cm: 55
-    getExp:
-    sell_price:
-    time:
-      - all day
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 22
     lore:
       - 暖かい地域に生息しているシイラの一種。味
       - は淡白でムニエルなどにすると美味。比較的
@@ -340,11 +315,10 @@ id:
   23:
     name: カオナシエイ
     cm: 40
-    getExp:
-    sell_price:
-    time:
-      - all day
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 23
     lore:
       - 頭部が窪んでいるエイの一種。比較的水深の
       - 浅い地域に多く生息している。進化の過程で
@@ -354,11 +328,10 @@ id:
   24:
     name: ガーディアンモドキ
     cm: 60
-    getExp:
-    sell_price:
-    time:
-      - all day
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 24
     lore:
       - 海洋に生息するガーディアンに似たフグの一
       - 種。針は生えているが柔らかく、ビームも放つ
@@ -368,13 +341,10 @@ id:
   25:
     name: ウミガラス
     cm: 15
-    getExp:
-    sell_price:
-    time:
-      - morning
-      - midnight
-      - night
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 3
+    texture_number: 25
     lore:
       - 全身が黒色のトビウオの一種。水深の深いエ
       - リアに主に生息する。昼間は海底で眠ってお
@@ -384,12 +354,10 @@ id:
   26:
     name: シーファントム
     cm: 45
-    getExp:
-    sell_price:
-    time:
-      - midnight
-      - night
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 4
+    texture_number: 26
     lore:
       - 海中を泳ぐファントムの一種。滅多に釣れず、
       - 釣ったとしても逃げてしまうことが多いため
@@ -399,11 +367,10 @@ id:
   27:
     name: カワヒラメ
     cm: 20
-    getExp:
-    sell_price:
-    time:
-      - all day
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 27
     lore:
       - 川に生息するカレイの一種。左側に目がつい
       - ているため当初はヒラメだと思われていたが、
@@ -413,11 +380,10 @@ id:
   28:
     name: エンバンスナガクレ
     cm: 15
-    getExp:
-    sell_price:
-    time:
-      - all day
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 28
     lore:
       - 円盤のような体を持つウミウシの一種。普段
       - は砂に隠れており、上に乗った生物に毒を放
@@ -427,11 +393,10 @@ id:
   29:
     name: コンブナマコ
     cm: 15
-    getExp:
-    sell_price:
-    time:
-      - all day
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 29
     lore:
       - 昆布のような見た目をしたナマコの一種。見
       - た目や質感も昆布に似ており、水中で見分け
@@ -441,11 +406,10 @@ id:
   30:
     name: スポンジフグ
     cm: 30
-    getExp:
-    sell_price:
-    time:
-      - all day
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 30
     lore:
       - スポンジのような外皮を持つフグの一種。威
       - 嚇する際には外皮の隙間に水を取り込むこと
@@ -455,11 +419,10 @@ id:
   31:
     name: シロツブアサリ
     cm: 3
-    getExp:
-    sell_price:
-    time:
-      - all day
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 31
     lore:
       - 白い小さな粒状のアサリの一種。砂浜に主に
       - 生息している。見た目は白い石に似ているが
@@ -469,11 +432,10 @@ id:
   32:
     name: レッドビート
     cm: 25
-    getExp:
-    sell_price:
-    time:
-      - all day
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 32
     lore:
       - 全身がビートルートのように真っ赤なブリの
       - 一種。発色が良いため鱗は顔料として使われ
@@ -483,11 +445,10 @@ id:
   33:
     name: アローフィッシュ
     cm: 30
-    getExp:
-    sell_price:
-    time:
-      - all day
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 33
     lore:
       - 矢のような形をしたダツの一種。実際に矢と
       - して使用することもでき、一部地域では年の
@@ -497,11 +458,10 @@ id:
   34:
     name: マリンビー
     cm: 3
-    getExp:
-    sell_price:
-    time:
-      - day
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 34
     lore:
       - 水中に住むハチの一種。女王蜂をトップに置
       - くヒエラルキーの中では最も下層に位置する。
@@ -511,13 +471,10 @@ id:
   35:
     name: アイフィッシュ
     cm: 40
-    getExp:
-    sell_price:
-    time:
-      - morning
-      - day
-      - midnight
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 35
     lore:
       - エンダーアイのような結晶が頭部についてい
       - るコイの一種。結晶部分が感覚器官としても
@@ -527,11 +484,10 @@ id:
   36:
     name: ハニカムグラント
     cm: 25
-    getExp:
-    sell_price:
-    time:
-      - all day
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 36
     lore:
       - 蜂の巣のような見た目のエラを持つグラント
       - の一種。大きく発達したエラを持つため、酸素
@@ -541,11 +497,10 @@ id:
   37:
     name: カマクラガニ
     cm: 5
-    getExp:
-    sell_price:
-    time:
-      - all day
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 37
     lore:
       - 寒冷地帯に住む白いカニの一種。砂を集めて
       - かまくらのような巣を作ることからこの名が
@@ -555,13 +510,10 @@ id:
   38:
     name: スカイマンタ
     cm: 35
-    getExp:
-    sell_price:
-    time:
-      - morning
-      - night
-      - midnight
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 38
     lore:
       - 水面を滑空し空を飛ぶマンタの一種。滑空能
       - 力が非常に高く、風に乗れば数百メートル以
@@ -571,13 +523,10 @@ id:
   39:
     name: ジャイアントマンタ
     cm: 70
-    getExp:
-    sell_price:
-    time:
-      - morning
-      - night
-      - midnight
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 3
+    texture_number: 39
     lore:
       - スカイマンタの中でも特に大きい個体の通称。
       - 大きさに比例して滑空能力も高くなっており、
@@ -587,13 +536,10 @@ id:
   40:
     name: コムギウミガメ
     cm: 60
-    getExp:
-    sell_price:
-    time:
-      - morning
-      - day
-      - night
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 3
+    texture_number: 40
     lore:
       - 小麦色の甲羅を持つウミガメの一種。日に焼
       - けてこの色になった訳ではなく幼体の頃から
@@ -603,11 +549,10 @@ id:
   41:
     name: アオイロフネガイ
     cm: 10
-    getExp:
-    sell_price:
-    time:
-      - all day
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 41
     lore:
       - 淡い藍色をした大型のフネガイの一種。危険
       - を感じると強い匂いのする体液を放出する。
@@ -617,11 +562,10 @@ id:
   42:
     name: ソウルドレイク
     cm: 30
-    getExp:
-    sell_price:
-    time:
-      - all day
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 42
     lore:
       - 褐色の体に炎のような赤い模様のあるカサゴ
       - の一種。模様や形をドラゴンになぞらえてこ
@@ -631,12 +575,10 @@ id:
   43:
     name: ツララダツ
     cm: 45
-    getExp:
-    sell_price:
-    time:
-      - night
-      - midnight
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 43
     lore:
       - 寒冷地帯に生息する氷柱のような白いダツの
       - 一種。光によってくる習性があるため水面か
@@ -646,12 +588,10 @@ id:
   44:
     name: セツゲンマグロ
     cm: 100
-    getExp:
-    sell_price:
-    time:
-      - morning
-      - day
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 44
     lore:
       - 凍った海に生息するマグロの一種。全身の筋
       - 肉をバネのように使って氷を砕きながら泳ぐ。
@@ -661,11 +601,10 @@ id:
   45:
     name: ハチクイヤマメ
     cm: 35
-    getExp:
-    sell_price:
-    time:
-      - day
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 45
     lore:
       - マリンビーを捕食するヤマメの一種。刺され
       - ても大丈夫なように全身の鱗が非常に分厚い。
@@ -675,12 +614,10 @@ id:
   46:
     name: ハチクイヤマメ
     cm: 30
-    getExp:
-    sell_price:
-    time:
-      - day
-      - night
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 46
     lore:
       - 大きな歯をもつカワハギの一種。黒色の体表
       - と威嚇時にカチカチと歯を鳴らす習性からこ
@@ -690,11 +627,10 @@ id:
   47:
     name: アンザンガイ
     cm: 6
-    getExp:
-    sell_price:
-    time:
-      - all day
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 47
     lore:
       - 安山岩のような見た目の殻を持つ二枚貝の一
       - 種。殻の見た目は周囲の岩石の種類によって
@@ -704,11 +640,10 @@ id:
   48:
     name: センリョクガイ
     cm: 6
-    getExp:
-    sell_price:
-    time:
-      - all day
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 48
     lore:
       - 閃緑岩のような見た目の殻を持つ二枚貝の一
       - 種。周囲の岩石の成分を取り込んで殻を形成
@@ -718,11 +653,10 @@ id:
   49:
     name: カコウガイ
     cm: 6
-    getExp:
-    sell_price:
-    time:
-      - all day
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 49
     lore:
       - 閃緑岩のような見た目の殻を持つ二枚貝の一
       - 種。周囲の岩石の成分を取り込んで殻を形成
@@ -732,26 +666,23 @@ id:
   50:
     name: クロックサーモン
     cm: 55
-    getExp:
-    sell_price:
-    time:
-      - day
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 50
     lore:
       - 時計のような模様のあるサケの一種。危険を
       - 感じると身体の色が変わり高速で逃げる。こ
       - のとき筋肉の構造からは不可能な速度で動く
       - ため時間を操るのではとも言われている。
 
-
   51:
     name: クロノスサーモン
     cm: 70
-    getExp:
-    sell_price:
-    time:
-      - day
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 4
+    texture_number: 51
     lore:
       - 時計のような模様を持つ大型のサケ一種。釣
       - ったはずなのに釣れてなかったり瞬間移動の
@@ -761,10 +692,10 @@ id:
   52:
     name: ホシクズザリガニ
     cm: 10
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 52
     lore:
       - 背中に星形の小さな模様があるザリガニの一
       - 種。星の部分は光を反射することから鳥など
@@ -774,10 +705,10 @@ id:
   53:
     name: ウシガラカレイ
     cm: 15
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 53
     lore:
       - 牛のような白黒の模様のあるカレイの一種。
       - 比較的浅い海中に住み、プランクトンなどを
@@ -787,10 +718,10 @@ id:
   54:
     name: マゼンタオクトパス
     cm: 50
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 3
+    texture_number: 54
     lore:
       - ショッキングピンクの体表を持つタコの一種。
       - 暖かい海域や珊瑚礁などに生息し、小魚を主
@@ -800,10 +731,10 @@ id:
   55:
     name: コクリュウノツカイ
     cm: 200
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 5
+    texture_number: 55
     lore:
       - 黒色のリュウグウノツカイの近縁種。滅多に
       - 姿を見せないことから、見ること自体が凶兆
@@ -813,10 +744,10 @@ id:
   56:
     name: ネザライマイマイ
     cm: 13
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 4
+    texture_number: 56
     lore:
       - 古代の残骸で殻を作る非常に珍しい巻貝の一
       - 種。貝にしては移動能力が高く、目に見えて動
@@ -826,10 +757,10 @@ id:
   57:
     name: スイショウモドキ
     cm: 40
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 3
+    texture_number: 57
     lore:
       - 水晶のような誘因突起を持つチョウチンアン
       - コウの一種。水晶を光らせることで魚を捕ら
@@ -839,10 +770,10 @@ id:
   58:
     name: ネザーフィッシュ
     cm: 30
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 58
     lore:
       - ネザーなどの高温地帯に生息するタラの一種。
       - 肉食で獰猛なため魚だけでなく水に近づいた
@@ -852,10 +783,10 @@ id:
   59:
     name: レンゴクマイマイ
     cm: 13
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 59
     lore:
       - マグマブロックで殻を作る巻貝の一種。貝に
       - しては移動能力が高く、飛び跳ねることもで
@@ -865,10 +796,10 @@ id:
   60:
     name: クロバリトラフグ
     cm: 15
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 60
     lore:
       - 黒い針のついたトラフグの一種。水を吸い込
       - み、噴き出すことで泥の中に隠れた小魚など
@@ -878,10 +809,10 @@ id:
   61:
     name: サンミャククジラ
     cm: 500
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 4
+    texture_number: 61
     lore:
       - 非常に大きなイワクジラの亜種。巨体さ故に
       - この名がつけられた。温厚な性格だが、岩石質
@@ -891,10 +822,10 @@ id:
   62:
     name: イワクジラ
     cm: 200
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 3
+    texture_number: 62
     lore:
       - 岩石質の肌を保つクジラの一種。その大きさ
       - も相まってまるで巨大な岩が水中を漂ってい
@@ -904,10 +835,10 @@ id:
   63:
     name: ジゴククラゲ
     cm: 20
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 3
+    texture_number: 63
     lore:
       - ネザーや火山地帯などに漂うクラゲの一種。
       - 内陸部や池にも生息していることから幼生の
@@ -917,10 +848,10 @@ id:
   64:
     name: セイリュウクラゲ
     cm: 3
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 64
     lore:
       - 水質の綺麗な清流などに生息するクラゲの一
       - 種。非常に小さく透明度が高いため、肉眼で観
@@ -930,10 +861,10 @@ id:
   65:
     name: コンランガエル
     cm: 4
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 65
     lore:
       - 森林に生息するカエルの一種。特徴的な鳴き
       - 声を持ち、聞いたものの三半規管に影響を与
@@ -943,10 +874,10 @@ id:
   66:
     name: ネザーサーモン
     cm: 40
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 66
     lore:
       - ネザーや火山地帯などに生息するサケの一種。
       - 海から産卵のために遡上してくるのではなく、
@@ -956,10 +887,10 @@ id:
   67:
     name: ヤミヨダケガニ
     cm: 8
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 67
     lore:
       - 甲羅に黒色のキノコが生えたカニの一種。キ
       - ノコの部分が暗闇で発光することを利用して
@@ -969,11 +900,10 @@ id:
   68:
     name: マッシュフィッシュ
     cm: 40
-    getExp:
-    sell_price:
-    time:
-    texture_number:
-    lore:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 68
       - 背中にマッシュルームの生えた大型のタラの
       - 一種。卵の段階で寄生し、成長と共に背中のキ
       - ノコも大きくなって行く。分離した状態での
@@ -982,10 +912,10 @@ id:
   69:
     name: ファングマイマイ
     cm: 13
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 69
     lore:
       - ホグリンなどの牙を殻にする巻貝の一種。落
       - ちている牙に穴を開けて卵を産みつける習性
@@ -995,10 +925,10 @@ id:
   70:
     name: フェアリースター
     cm: 10
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 70
     lore:
       - 白色の星形の殻を持つ二枚貝の一種。周囲の
       - 水質を改善させる性質があり、群生地では透
@@ -1008,10 +938,10 @@ id:
   71:
     name: ハラグロメバル
     cm: 30
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 71
     lore:
       - 黒色の腹部を持つメバルの一種。普段は海底
       - を泳ぎながら小魚などを捕食し生活している。
@@ -1021,10 +951,10 @@ id:
   72:
     name: アングラカサゴ
     cm: 20
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 72
     lore:
       - 暖かい海域に生息するカサゴの一種。胸びれ
       - を動かすことで小魚を集める動作が釣り人に
@@ -1034,10 +964,10 @@ id:
   73:
     name: セイリュウマダイ
     cm: 20
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 3
+    texture_number: 73
     lore:
       - 山岳地帯などの清流に生息する淡水生のマダ
       - イの一種。透明度の高い水中ではその赤い身
@@ -1047,10 +977,10 @@ id:
   74:
     name: モンヨウハタハタ
     cm: 25
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 74
     lore:
       - 比較的浅い海域に生息するハタハタの一種。
       - 砂に特徴的な紋様を描くことでメスに求愛す
@@ -1060,10 +990,10 @@ id:
   75:
     name: カイヨウワタリガニ
     cm: 50
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 75
     lore:
       - 海底を歩いて渡りをするカニの一種。身体に
       - 比べて足が非常に長いという特徴を持つ。世
@@ -1073,10 +1003,10 @@ id:
   76:
     name: シードシェル
     cm: 5
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 76
     lore:
       - 緑色をした小型の巻貝の一種。やや長い入水
       - 管と出水管を持つのが特徴。巻貝にしては珍
@@ -1086,10 +1016,10 @@ id:
   77:
     name: パンプキンシェル
     cm: 10
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 77
     lore:
       - オレンジ色の殻を持つ中型の二枚貝の一種。
       - 表側に顔のような、裏側には白い斑点の特徴
@@ -1099,10 +1029,10 @@ id:
   78:
     name: クロツブアサリ
     cm: 5
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 78
     lore:
       - 黒い粒状のアサリの一種。石状の黒い殻は硬
       - 度が高く、水晶でも傷がつけられない。可燃性
@@ -1112,10 +1042,10 @@ id:
   79:
     name: セイドウスズキ
     cm: 80
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 79
     lore:
       - 鈍色に輝く硬い鱗を持つスズキの一種。冬は
       - 水深の深い地域に、夏は水深の浅い地域に生
@@ -1125,10 +1055,10 @@ id:
   80:
     name: ジャドウニュウドウ
     cm: 45
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 80
     lore:
       - 胴体に蛇のような模様を持つタコの一種。知
       - 能が他の種類のタコと比べても高く、道具を
@@ -1138,10 +1068,10 @@ id:
   81:
     name: コウオツイカ
     cm: 25
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 81
     lore:
       - 海洋に広く生息するイカの一種。雌は身が厚
       - く歯応えがあり、雄は身が薄く特徴的な食感
@@ -1151,10 +1081,10 @@ id:
   82:
     name: キバクカサゴ
     cm: 18
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 82
     lore:
       - 赤と黒の縞模様を持つカサゴの一種。威嚇す
       - る時に独特な「シュー」という音を立てること
@@ -1164,10 +1094,10 @@ id:
   83:
     name: アメジストジェリー
     cm: 15
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 3
+    texture_number: 83
     lore:
       - アメジストのような色合いの傘を持つクラゲ
       - の一種。成長と共に傘の模様の色合いも濃く
@@ -1177,10 +1107,10 @@ id:
   84:
     name: サンドジェリー
     cm: 18
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 84
     lore:
       - 砂のようなクリーム色の色合いの傘を持つク
       - ラゲの一種。温度や環境の変化に強く飼育が
@@ -1190,10 +1120,10 @@ id:
   85:
     name: サンドジェリー
     cm: 180
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 85
     lore:
       - 濃い紺色の体色を持つクジラの一種。夜明け
       - ごろに特徴的な鳴き声を発することからこの
@@ -1203,10 +1133,10 @@ id:
   86:
     name: ハッショクニュウドウ
     cm: 50
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 86
     lore:
       - 擬態能力を持つタコの一種。周囲の環境に応
       - じて体色を自在に変化させる特性を持つ。素
@@ -1216,10 +1146,10 @@ id:
   87:
     name: リュウノオトシゴ
     cm: 120
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 5
+    texture_number: 87
     lore:
       - 黒色の体表を持つ大型のタツノオトシゴの一
       - 種。熱水を噴き出したり、頑丈な外骨格を持っ
@@ -1229,10 +1159,10 @@ id:
   88:
     name: シーリヴァイアサン
     cm: 1000
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 5
+    texture_number: 88
     lore:
       - 海中に生息する巨大なウミヘビの一種。その
       - 生態や特性は未知の部分が多く、未知の臓器
@@ -1242,10 +1172,10 @@ id:
   89:
     name: タルクラゲ
     cm: 20
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 89
     lore:
       - 樽のような筒状の傘を持つクラゲの一種。傘
       - の内部に気体を蓄えることで水面付近を漂い、
@@ -1255,10 +1185,10 @@ id:
   90:
     name: キョダイクラゲ
     cm: 70
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 90
+    rank: 1
+    texture_number: 32
     lore:
       - 大型のタルクラゲの近縁種。傘の直径が一メ
       - ートル弱まで成長することもある。広範囲に
@@ -1268,10 +1198,10 @@ id:
   91:
     name: ボウダイクラゲ
     cm: 140
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 91
     lore:
       - 非常に大型のタルクラゲの近縁種。成長速度
       - が速く、数年で傘の直径が数メートルに達す
@@ -1281,10 +1211,10 @@ id:
   92:
     name: イルカモドキ
     cm: 90
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 92
     lore:
       - イルカのように見えるカジキの一種。イルカ
       - の群れに溶け込み共に生活を行う。繁殖期に
@@ -1295,10 +1225,10 @@ id:
   93:
     name: ジョウオウイカ
     cm: 400
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 3
+    texture_number: 93
     lore:
       - 女王の名を冠する大きなイカの一種。死ぬま
       - で成長し続けることから、数十年以上生きた
@@ -1308,10 +1238,10 @@ id:
   94:
     name: コウテイイカ
     cm: 500
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 4
+    texture_number: 94
     lore:
       - 皇帝の名を冠する巨大なイカの一種。寿命は
       - 短いが、成長速度が非常に速くジョウオウイ
@@ -1321,11 +1251,10 @@ id:
   95:
     name: マリンソルジャー
     cm: 15
-    getExp:
-    sell_price:
-    time:
-      - day
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 3
+    texture_number: 95
     lore:
       - マリンビーの兵隊。マリンビーのヒエラルキ
       - ーの上位に位置しており、巣の防衛や働き蜂
@@ -1335,10 +1264,10 @@ id:
   96:
     name: シンソウマダイ
     cm: 30
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 96
     lore:
       - 比較的水深の深い位置に生息する黒色のタイ
       - の一種。温暖な地域から寒冷な地域まで広く
@@ -1348,10 +1277,10 @@ id:
   97:
     name: ブレイズガー
     cm: 110
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 97
     lore:
       - 炎のような模様を持つガーの一種。大型の肉
       - 食魚であるが、気性は穏やか。遥か昔からその
@@ -1361,10 +1290,10 @@ id:
   98:
     name: フロストクロコダイル
     cm: 130
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 3
+    texture_number: 98
     lore:
       - 雪原に生息するクロコダイルの一種。腹部の
       - 熱感器官を利用して雪の中の動物を見つけ捕
@@ -1374,10 +1303,10 @@ id:
   99:
     name: セキカクマノミ
     cm: 3
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 99
     lore:
       - 灰色の体色をもつクマノミの一種。一見する
       - と石のように見えることからこの名がつけら
@@ -1387,10 +1316,10 @@ id:
   100:
     name: コウゲンクリオネ
     cm: 2
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 100
     lore:
       - 発光器官を持つクリオネの一種。生まれた時
       - は発光器官を有しておらず、成長の過程で貝
@@ -1400,10 +1329,10 @@ id:
   101:
     name: グロウシャーク
     cm: 140
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 101
     lore:
       - 体表がうっすらと発光しているサメの一種。
       - 捕食する魚に含まれる発光物質を体内で精製、
@@ -1413,10 +1342,10 @@ id:
   102:
     name: アンコククリオネ
     cm: 2
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 102
     lore:
       - 頭部と尾が黒色のクリオネの一種。翼を広げ
       - たような姿は愛らしいが、その黒さも相まっ
@@ -1426,10 +1355,10 @@ id:
   103:
     name: マンマルフグモドキ
     cm: 20
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 103
     lore:
       - 膨らんだフグのような見た目のダンゴウオの
       - 一種。口から水を噴き出すがその流速は弱く、
@@ -1439,10 +1368,10 @@ id:
   104:
     name: スカイリヴァイアサン
     cm: 1000
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 5
+    texture_number: 104
     lore:
       - 飛行能力を持つ巨大なウミヘビの一種。これ
       - だけの巨大がどのような原理で浮遊している
@@ -1452,10 +1381,10 @@ id:
   105:
     name: セキジュンウニ
     cm: 5
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 105
     lore:
       - 鍾乳石のような年輪模様が棘に付いているウ
       - ニの一種。針は硬いが脆いため、皮膚に突き刺
@@ -1465,10 +1394,10 @@ id:
   106:
     name: ハングリーピラルク
     cm: 130
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 106
     lore:
       - 非常に大型のアロワナの一種。体内の酸素濃
       - 度を維持するために水面に出て口を開けるこ
@@ -1478,10 +1407,10 @@ id:
   107:
     name: シロハネニシン
     cm: 15
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 4
+    texture_number: 107
     lore:
       - 白い大きな胸びれを持つニシンの一種。トビ
       - ウオなどとは異なり特に滑空能力があるわけ
@@ -1491,10 +1420,10 @@ id:
   108:
     name: テッパンカワヒラメ
     cm: 20
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 3
+    texture_number: 108
     lore:
       - 板状の頑丈な骨格を持つヒラメの一種。ヒラ
       - メの中では比較的大型に成長する。骨の可動
@@ -1504,10 +1433,10 @@ id:
   109:
     name: ヤマブキカワナガレ
     cm: 120
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 109
     lore:
       - 黄色い紐状の粘菌の一種。海藻や岩などに身
       - 体を固定し、川に漂う微生物を吸収して活動
@@ -1517,10 +1446,10 @@ id:
   110:
     name: ハナモチアンコウ
     cm: 30
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 110
     lore:
       - 花のような擬似餌をもつアンコウの一種。比
       - 較的水深の浅い海底に生息しており、擬似餌
@@ -1530,10 +1459,10 @@ id:
   111:
     name: セキタンスズキ
     cm: 60
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 111
     lore:
       - 黒い斑点を持つスズキの一種。寒冷地帯から
       - 温暖地帯まで幅広い海域を季節と共に回る回
@@ -1543,10 +1472,10 @@ id:
   112:
     name: カネナリガイ
     cm: 25
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 3
+    texture_number: 112
     lore:
       - 釣鐘のような膨らんだ殻を持つ巻貝の一種。
       - 危険を感じると殻を揺らして威嚇することか
@@ -1556,10 +1485,10 @@ id:
   113:
     name: シンリンメザシ
     cm: 40
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 113
     lore:
       - 森林に向かって遡上する小型のサケの一種。
       - その生態からこの名がつけられた。春過ぎに
@@ -1569,10 +1498,10 @@ id:
   114:
     name: ヤツイロウナギ
     cm: 40
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 114
     lore:
       - 腹部にカラフルな斑点を持つウナギの一種。
       - 繁殖力と環境適応能力が高く大量に取れるう
@@ -1582,10 +1511,10 @@ id:
   115:
     name: オウゴンマグロ
     cm: 120
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 4
+    texture_number: 115
     lore:
       - 黄金色に輝く鱗を持つマグロの一種。毒を持
       - つことから警戒色としての役割があるのでは
@@ -1595,10 +1524,10 @@ id:
   116:
     name: コガネモチガニ
     cm: 10
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 3
+    texture_number: 116
     lore:
       - 黄金色に輝く丸い殻を持つカニの一種。殻は
       - 主に黄銅で形成されており、比較的強度が高
@@ -1608,10 +1537,10 @@ id:
   117:
     name: ミツマタカジキ
     cm: 110
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 4
+    texture_number: 117
     lore:
       - 三本の角を持つカジキの一種。角は非常に強
       - 度が高く、突進によって分厚い鉄板に穴が開
@@ -1621,10 +1550,10 @@ id:
   118:
     name: デザートフライ
     cm: 30
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 118
     lore:
       - 砂上を滑空するトビウオの一種。水が少ない
       - 環境でも生存できるように進化しており、鳥
@@ -1634,10 +1563,10 @@ id:
   119:
     name: ドロモチガメ
     cm: 20
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 119
     lore:
       - 泥団子のような黒い球状の甲羅を持つカメの
       - 一種。水中で外敵から身を守るためにこの形
@@ -1647,10 +1576,10 @@ id:
   120:
     name: ヌマガエル
     cm: 5
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 37
+    rank: 1
+    texture_number: 120
     lore:
       - 森や湿地などの泥の多い場所に生息する青色
       - のカエルの一種。泥を身に纏うことで乾燥か
@@ -1660,10 +1589,10 @@ id:
   121:
     name: アカハラカジキ
     cm: 100
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 3
+    texture_number: 121
     lore:
       - 腹部が赤色のカジキの一種。非常に素早く泳
       - ぐことから、周辺地域では泳ぎの上手な人を
@@ -1673,10 +1602,10 @@ id:
   122:
     name: ヒトツノイワシ
     cm: 10
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 122
     lore:
       - 頭に体の半分ほどの大きさの角の生えたイワ
       - シの一種。単体ではおとなしいが、群れになる
@@ -1686,10 +1615,10 @@ id:
   123:
     name: サバクペンギン
     cm: 30
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 123
     lore:
       - 砂漠に生息するペンギンの一種。砂漠のオア
       - シスに主に生息している。砂の上を滑るよう
@@ -1699,10 +1628,10 @@ id:
   124:
     name: ウキクラゲ
     cm: 20
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 124
     lore:
       - 風に乗って空中を漂うことができるクラゲの
       - 一種。風が強い山岳地帯などに主に生息して
@@ -1712,10 +1641,10 @@ id:
   125:
     name: ハネガツオ
     cm: 70
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 3
+    texture_number: 125
     lore:
       - 左右の胸びれが大きく発達したカツオの一種。
       - 海面を滑空することでトビウオやそれを狙う
@@ -1725,10 +1654,10 @@ id:
   126:
     name: マリンマッシュルーム
     cm: 5
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 126
     lore:
       - 海中を漂うマッシュルームの一種。網状に広
       - がった傘で海中のプランクトンを捕まえ、栄
@@ -1738,10 +1667,10 @@ id:
   127:
     name: サバクウキクラゲ
     cm: 20
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 127
     lore:
       - 砂漠に生息するウキクラゲの一種。普段はオ
       - アシスなどで漂っているが、嵐が来ると上空
@@ -1751,10 +1680,10 @@ id:
   128:
     name: セツゲンウキクラゲ
     cm: 20
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 128
     lore:
       - 寒冷地帯に生息するウキクラゲの一種。暖か
       - い間は水中で過ごし、冬になると吹雪に幼生
@@ -1764,10 +1693,10 @@ id:
   129:
     name: マダライワガニ
     cm: 5
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 129
     lore:
       - 石の多い海岸沿いに生息するカニの一種。周
       - 囲の石や珊瑚を体液で溶かして殻にする生態
@@ -1777,10 +1706,10 @@ id:
   130:
     name: ナナイロイワガニ
     cm: 5
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 4
+    texture_number: 130
     lore:
       - 虹色に輝く殻を持つマダライワガニの変種。
       - 突然変異によって溶解性の体液が虹色に反射
@@ -1788,12 +1717,12 @@ id:
       - なったと考えられている。
 
   131:
-    name: ナナイロイワガニ
+    name: トウフウオ
     cm: 20
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 3
+    texture_number: 131
     lore:
       - 白く四角い見た目のテッポウウオの一種。吸
       - い込んだ水を体内で沸騰させ、その圧力を使
@@ -1803,10 +1732,10 @@ id:
   132:
     name: アレチガエル
     cm: 5
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 132
     lore:
       - 荒地に生息する茶色いカエルの一種。少ない
       - 水でも生きられるように、親の体内でカエル
@@ -1816,10 +1745,10 @@ id:
   133:
     name: コケガメ
     cm: 20
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 133
     lore:
       - 甲羅に苔が生えているカメの一種。苔から光
       - 合成によるエネルギーを供給されているため、
@@ -1829,10 +1758,10 @@ id:
   134:
     name: ヒカリテトラ
     cm: 5
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 134
     lore:
       - 発光能力を持つテトラの一種。穏やかな光を
       - 体の側面から放つ生態を持つ。観賞魚として
@@ -1842,10 +1771,10 @@ id:
   135:
     name: ヤマブキデンキガイ
     cm: 10
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 3
+    texture_number: 135
     lore:
       - 放電能力を持った黄色の巻貝の一種。危険を
       - 感じると殻の突起部分から高圧電流を放つ。
@@ -1855,10 +1784,10 @@ id:
   136:
     name: ピラニアスナガクレ
     cm: 10
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 136
     lore:
       - 濁った川に生息するピラニアの一種。普段は
       - 砂に隠れて静かに獲物を待ち、近づいてきた
@@ -1868,10 +1797,10 @@ id:
   137:
     name: コオリナマズ
     cm: 30
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 137
     lore:
       - 寒冷地域に生息するナマズの一種。水面が凍
       - るような水温が低い地域でも活動することが
@@ -1881,10 +1810,10 @@ id:
   138:
     name: ハガクレマス
     cm: 10
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 138
     lore:
       - 水中の枯れ葉に潜る特性があるマスの一種。
       - 雄に対して雌の数が非常に少ないため、基本
@@ -1894,10 +1823,10 @@ id:
   139:
     name: ハガクレニジマス
     cm: 10
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 4
+    texture_number: 139
     lore:
       - ハガクレマスの雌の通称。雄にはない虹色の
       - 光沢が特徴で、見た目も非常に美しい。雄に自
@@ -1907,13 +1836,305 @@ id:
   140:
     name: アダマンマイマイ
     cm: 13
-    getExp:
-    sell_price:
-    time:
-    texture_number:
+    getExp: 3
+    sell_price: 3
+    rank: 5
+    texture_number: 140
     lore:
       - 未知の鉱石を殻に持つ非常に珍しい巻貝の一
       - 種。非常に強度の高い殻を持つ。どのようにし
       - て殻を形成しているかは不明だが、銅が影響
       - しているのではと考えられている。
+
+  141:
+    name: §k----§r
+    cm: 10
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 141
+    lore:
+      - §k----
+      - §k----
+      - §k----
+      - §k----
+  142:
+    name: §k----§r
+    cm: 10
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 142
+    lore:
+      - §k----
+      - §k----
+      - §k----
+      - §k----
+  143:
+    name: §k----§r
+    cm: 10
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 143
+    lore:
+      - §k----
+      - §k----
+      - §k----
+      - §k----
+  144:
+    name: §k----§r
+    cm: 10
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 144
+    lore:
+      - §k----
+      - §k----
+      - §k----
+      - §k----
+  145:
+    name: §k----§r
+    cm: 10
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 145
+    lore:
+      - §k----
+      - §k----
+      - §k----
+      - §k----
+  146:
+    name: §k----§r
+    cm: 10
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 146
+    lore:
+      - §k----
+      - §k----
+      - §k----
+      - §k----
+  147:
+    name: §k----§r
+    cm: 10
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 147
+    lore:
+      - §k----
+      - §k----
+      - §k----
+      - §k----
+  148:
+    name: §k----§r
+    cm: 10
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 148
+    lore:
+      - §k----
+      - §k----
+      - §k----
+      - §k----
+  149:
+    name: §k----§r
+    cm: 10
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 149
+    lore:
+      - §k----
+      - §k----
+      - §k----
+      - §k----
+  150:
+    name: §k----§r
+    cm: 10
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 150
+    lore:
+      - §k----
+      - §k----
+      - §k----
+      - §k----
+  151:
+    name: §k----§r
+    cm: 10
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 151
+    lore:
+      - §k----
+      - §k----
+      - §k----
+      - §k----
+  152:
+    name: §k----§r
+    cm: 10
+    getExp: 3
+    sell_price: 3
+    rank: 1
+    texture_number: 152
+    lore:
+      - §k----
+      - §k----
+      - §k----
+      - §k----
+  153:
+    name: §k----§r
+    cm: 10
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 153
+    lore:
+      - §k----
+      - §k----
+      - §k----
+      - §k----
+  154:
+    name: §k----§r
+    cm: 10
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 154
+    lore:
+      - §k----
+      - §k----
+      - §k----
+      - §k----
+  155:
+    name: §k----§r
+    cm: 10
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 155
+    lore:
+      - §k----
+      - §k----
+      - §k----
+      - §k----
+  156:
+    name: §k----§r
+    cm: 10
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 156
+    lore:
+      - §k----
+      - §k----
+      - §k----
+      - §k----
+  157:
+    name: §k----§r
+    cm: 10
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 157
+    lore:
+      - §k----
+      - §k----
+      - §k----
+      - §k----
+  158:
+    name: §k----§r
+    cm: 10
+    getExp: 3
+    sell_price: 3
+    rank: 2
+    texture_number: 158
+    lore:
+      - §k----
+      - §k----
+      - §k----
+      - §k----
+  159:
+    name: §k----§r
+    cm: 10
+    getExp: 3
+    sell_price: 3
+    rank: 3
+    texture_number: 159
+    lore:
+      - §k----
+      - §k----
+      - §k----
+      - §k----
+
+  160:
+    name: §k----§r
+    cm: 10
+    getExp: 3
+    sell_price: 3
+    rank: 3
+    texture_number: 160
+    lore:
+      - §k----
+      - §k----
+      - §k----
+      - §k----
+  161:
+    name: §k----§r
+    cm: 10
+    getExp: 3
+    sell_price: 3
+    rank: 3
+    texture_number: 161
+    lore:
+      - §k----
+      - §k----
+      - §k----
+      - §k----
+  162:
+    name: §k----§r
+    cm: 10
+    getExp: 3
+    sell_price: 3
+    rank: 4
+    texture_number: 162
+    lore:
+      - §k----
+      - §k----
+      - §k----
+      - §k----
+  163:
+    name: §k----§r
+    cm: 10
+    getExp: 3
+    sell_price: 3
+    rank: 4
+    texture_number: 163
+    lore:
+      - §k----
+      - §k----
+      - §k----
+      - §k----
+  164:
+    name: §k----§r
+    cm: 10
+    getExp: 3
+    sell_price: 3
+    rank: 5
+    texture_number: 164
+    lore:
+      - §k----
+      - §k----
+      - §k----
+      - §k----
+
+
 

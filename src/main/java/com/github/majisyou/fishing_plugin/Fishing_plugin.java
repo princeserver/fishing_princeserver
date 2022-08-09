@@ -34,33 +34,28 @@ public final class Fishing_plugin extends JavaPlugin {
 
 
         //command処理
-        new Cmd_test(this);
         new Cmd_reloadconfig(this);
-        new Cmd_Debug_fish_catch(this);
         new Cmd_fishing_rod(this);
         new Cmd_fishshop(this);
         new Cmd_summon_villager(this);
+        new Cmd_catch_fish(this);
 
 
         //configの設定
         new CustomConfigSetting(this).saveDefaultConfig();
         ConfigManager.loadConfig();
-        new CustomConfigSetting(this,"Biome_template.yml").saveDefaultConfig();
+        new CustomConfigSetting(this, "Biome.yml").saveDefaultConfig();
         new CustomConfigSetting(this,"fish.yml").saveDefaultConfig();
         new CustomConfigSetting(this,"fisher_man.yml").saveDefaultConfig();
-        try {FishSystem.setup_custom_config(this);
-            FishSystem.load_config();
-        } catch (Exception e) {getLogger().info("biomeコンフィグを読み込んでないかも");}
 
-
-        getLogger().info("Fishing_pluginだよ");
+        getLogger().info("(FP)"+"Fishing_pluginだよ");
     }
 
     @Override
     public void onDisable() {
         // Plugin shutdown logic
 
-        getLogger().info("Fishing_pluginよBYEBYE");
+        getLogger().info("(FP)"+"Fishing_pluginよBYEBYE");
     }
 
 }

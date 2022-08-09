@@ -1,21 +1,19 @@
 package com.github.majisyou.fishing_plugin.system;
 
-import com.github.majisyou.fishing_plugin.Config.FishConfigManager;
 import com.github.majisyou.fishing_plugin.Fishing_plugin;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
-import org.bukkit.entity.Fish;
-import org.bukkit.entity.Item;
+import org.bukkit.NamespacedKey;
+import org.bukkit.block.ShulkerBox;
 import org.bukkit.entity.Player;
-import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.InventoryView;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.BlockStateMeta;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.persistence.PersistentDataContainer;
+import org.bukkit.persistence.PersistentDataType;
 
-import java.awt.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class FishGui {
@@ -24,39 +22,112 @@ public class FishGui {
 
     //Playerに売るようのguiを開かせるメソッド
     public static void OpenInventory(Player player){
-        Inventory sell_fish =  Bukkit.createInventory(null, 36,"釣りマスター");
+        Inventory sell_fish =  Bukkit.createInventory(null, 36,"釣りマスター：\"売りたい魚を入れな\"");
         player.openInventory(sell_fish);
     }
 
     //インベントリ内の魚の値段を判定するメソッド
     public static Integer SellValue(Inventory inventory){
-        int inventory_size = 36;
         int sum_value = 0;
-        int stack = 1;
-        String id = "No.0";
-        ItemStack[] item = inventory.getStorageContents();
-        if(inventory.getSize()==inventory_size){
-            for (ItemStack itemStack : item) {
-                if (!(itemStack == null)) {
-                    if (itemStack.getType().equals(Material.TROPICAL_FISH)) {
-                        if (itemStack.getItemMeta().hasCustomModelData()) {
-                            id = itemStack.getLore().get(0).substring(5);
-                            stack = itemStack.getAmount();
-                            try {
-                                FishConfigManager.LoadFishConfig(Integer.parseInt(id));
-                            } catch (Exception e) {
-                                plugin.getLogger().info("お魚のid間違えてない？" + id);
-                            }
-                            try {
-                                sum_value += Integer.parseInt(FishConfigManager.getSell_price()) * stack;
-                            }catch (Exception e){
-                                plugin.getLogger().info("id:"+id+"の値段設定が間違ってる"+FishConfigManager.getSell_price());
-                            }
+        int stack;
+        ItemStack[] items = inventory.getStorageContents();
+        for (int i = 0; i < inventory.getSize(); i++){
+            ItemStack itemStack = items[i];
+            if(itemStack != null){
+                if(itemStack.getType().equals(Material.TROPICAL_FISH)){
+                    ItemMeta itemMeta = itemStack.getItemMeta();
+                    NamespacedKey key = new NamespacedKey(plugin,"sellPrice");
+                    PersistentDataContainer pdc = itemMeta.getPersistentDataContainer();
+                    if(pdc.has(key)){
+                        int sellPrice = 0;
+                        try {
+                            sellPrice = pdc.get(key, PersistentDataType.INTEGER);
+                        }catch (Exception e){
+                            plugin.getLogger().info("(FP)"+"error occurred"+e+":sellpriceのエラー");
+                            sellPrice = 1;
                         }
+                        stack = itemStack.getAmount();
+                        if(sum_value + sellPrice * stack < 0){
+                            break;
+                        }
+                        sum_value += sellPrice * stack;
+                        inventory.setItem(i,new ItemStack(Material.AIR));
+                    }
+                }
+                ItemMeta itemMeta = itemStack.getItemMeta();
+                if(itemMeta instanceof BlockStateMeta blockStateMeta){
+                    if(blockStateMeta.getBlockState() instanceof ShulkerBox){
+                        ShulkerBox shulkerBox = (ShulkerBox) blockStateMeta.getBlockState();
+                        Inventory shulkerInventory = shulkerBox.getInventory();
+                        Integer sellprice = SellShulker(shulkerInventory,sum_value);
+                        if(sum_value + sellprice > 4096000){
+                            break;
+                        }
+                        sum_value += sellprice;
+                        blockStateMeta.setBlockState(shulkerBox);
+                        itemStack.setItemMeta(blockStateMeta);
+
                     }
                 }
             }
-            return sum_value;
+        }
+        return sum_value;
+    }
+//
+//    public static Integer SellPrice(Inventory inventory){
+//        int sum_value = 0;
+//        int stack;
+//        ItemStack[] items = inventory.getStorageContents();
+//        for (int i = 0; i < inventory.getSize(); i++){
+//            ItemStack itemStack = items[i];
+//            if(itemStack.getType().equals(Material.TROPICAL_FISH)){
+//                ItemMeta itemMeta = itemStack.getItemMeta();
+//                NamespacedKey key = new NamespacedKey(plugin,"sellPrice");
+//                PersistentDataContainer pdc = itemMeta.getPersistentDataContainer();
+//                if(pdc.has(key)){
+//                    int sellPrice = 0;
+//                    try {
+//                        sellPrice = pdc.get(key, PersistentDataType.INTEGER);
+//                    }catch (Exception e){
+//                        plugin.getLogger().info("(FP)"+"error occurred"+e+":sellpriceのエラー");
+//                        sellPrice = 1;
+//                    }
+//                    stack = itemStack.getAmount();
+//                    sum_value += sellPrice * stack;
+//                }
+//            }
+//
+//        }
+//        return sum_value;
+//    }
+
+    public static Integer SellShulker(Inventory inventory,Integer sum_value){
+        int stack;
+        ItemStack[] items = inventory.getStorageContents();
+        for (int i = 0; i < inventory.getSize(); i++){
+            ItemStack itemStack = items[i];
+            if(itemStack != null) {
+                if (itemStack.getType().equals(Material.TROPICAL_FISH)) {
+                    ItemMeta itemMeta = itemStack.getItemMeta();
+                    NamespacedKey key = new NamespacedKey(plugin, "sellPrice");
+                    PersistentDataContainer pdc = itemMeta.getPersistentDataContainer();
+                    if (pdc.has(key)) {
+                        int sellPrice = 0;
+                        try {
+                            sellPrice = pdc.get(key, PersistentDataType.INTEGER);
+                        } catch (Exception e) {
+                            plugin.getLogger().info("(FP)" + "error occurred" + e + ":sellpriceのエラー");
+                            sellPrice = 1;
+                        }
+                        stack = itemStack.getAmount();
+                        if(sum_value + sellPrice * stack > 4096000){
+                            break;
+                        }
+                        sum_value += sellPrice * stack;
+                        inventory.setItem(i, new ItemStack(Material.AIR));
+                    }
+                }
+            }
         }
         return sum_value;
     }
@@ -64,74 +135,55 @@ public class FishGui {
     //インベントリに入らないアイテムをその場にドロップするメソッド
     //ただOwnerを設定できていないから、うーんという気分。
     //時間でOwnerが外れるっていうメソッドは作れなかった
-    public static List<ItemStack> dropItem(Inventory inventory){
-        int inventory_size = 36;
-        int stack = 1;
-
-        String id = "No.0";
-        ItemStack[] item = inventory.getStorageContents();
-        List<ItemStack> drops = new ArrayList<>();
-
-        if(inventory.getSize()==inventory_size){
-            for (ItemStack itemStack : item) {
-                if (!(itemStack == null)) {
-                    if (!(itemStack.getType().equals(Material.TROPICAL_FISH))) {
-                        drops.add(itemStack);
-                    } else if (!(itemStack.getItemMeta().hasCustomModelData())) {
-                        drops.add(itemStack);
-                    }
-                }
-            }
-         }
-        return drops;
-    }
-
-    //使ってない
-    public static List<ItemStack> dropAll(Inventory inventory){
-        int inventory_size = 36;
-        String id = "No.0";
-        ItemStack[] item = inventory.getStorageContents();
-        List<ItemStack> drops = new ArrayList<>();
-        if(inventory.getSize()==inventory_size){
-            for (ItemStack itemStack : item) {
-                if (!(itemStack == null)) {
-                    drops.add(itemStack);
+    public static void dropItem(Inventory inventory,Player player){
+        ItemStack[] items = inventory.getContents();
+        Inventory playerInventory = player.getInventory();
+        for (ItemStack item : items){
+            if(item != null){
+                if(playerInventory.firstEmpty() != -1){
+                    playerInventory.addItem(item);
+                }else {
+                    player.getWorld().dropItem(player.getLocation(),item);
                 }
             }
         }
-        return drops;
     }
 
     //得られたお金をどうエメラルドに直すかというメソッド
-    public static List<Integer> cal_emerald(Integer sell_value){
+    public static List<Integer> cal_emerald(Integer Value){
         List<Integer> cal_emerald = new ArrayList<>();
+        int sellValue = Value;
+        int Liquid_emerald = 0;
+        int emeraldBlock = 0;
 
-        Integer Liquid_emerald = 0;
-        Integer emeraldBlock = 0;
-        Integer emerald = 0;
-
-        if(sell_value>4096)
-            for (int i = sell_value; i >= 4096;){
+        if(sellValue > 4096){
+            while (sellValue > 4096){
                 Liquid_emerald += 1;
-                i -= 4096;
-                sell_value = i;
+                sellValue -= 4096;
             }
+        }
 
-
-        if(sell_value>64)
-            for (int i = sell_value; i >= 64;){
+        if(sellValue > 64){
+            while (sellValue > 64){
                 emeraldBlock += 1;
-                i -= 64;
-                sell_value = i;
+                sellValue -= 64;
             }
-
-        emerald = sell_value;
+        }
 
         cal_emerald.add(Liquid_emerald);
         cal_emerald.add(emeraldBlock);
-        cal_emerald.add(emerald);
+        cal_emerald.add(sellValue);
 
         return cal_emerald;
+    }
+
+    public static void AddItemPlayerInventory(ItemStack itemStack,Player player){
+        Inventory playerInventory = player.getInventory();
+        if(playerInventory.firstEmpty() != -1){
+            playerInventory.addItem(itemStack);
+        }else {
+            player.getWorld().dropItem(player.getLocation(),itemStack);
+        }
     }
 
 }
