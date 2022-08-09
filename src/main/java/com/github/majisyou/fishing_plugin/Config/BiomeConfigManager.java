@@ -6,19 +6,21 @@ import org.bukkit.configuration.file.FileConfiguration;
 import java.util.List;
 
 public class BiomeConfigManager {
-    //ここも説明しない！
 
     private static Fishing_plugin plugin = Fishing_plugin.getInstance();
+    private static FileConfiguration config = new CustomConfigSetting(plugin,"Biome.yml").getConfig();
 
-    private static Integer FaileProbability;
     private static List<Integer> fish_id;
 
-    public static void loadBiome(FileConfiguration config,String rank){
-        FaileProbability= config.getInt(rank+".FaileProbability");
-        fish_id = config.getIntegerList(rank+".id");
+    public static void reload(){
+        config = new CustomConfigSetting(plugin,"Biome.yml").getConfig();
     }
 
-    public static Integer getFaileProbability(){return FaileProbability;}
+    public static void loadBiome(String biome,String time,Integer rank){
+        String filepath = "Biome."+biome+".time."+time+"."+rank;
+        fish_id = config.getIntegerList(filepath);
+    }
+
     public static List<Integer> getFish_id(){return fish_id;}
 
 }
