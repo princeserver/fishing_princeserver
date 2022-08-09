@@ -46,18 +46,16 @@ public class CustomConfigSetting {
         if(!configFile.exists()){
             //Files.createFileには絶対的なPathが必要ということでconfigFileの絶対Pathの作成
             Files.createFile(Path.of(configFile.getAbsolutePath()));
-            plugin.getLogger().info(file+"がなかったから"+file+"を作成したよ");
+            plugin.getLogger().info("(FP)"+file+"がなかったから"+file+"を作成したよ");
         }
     }
 
     public void reloadConfig(){
         config = YamlConfiguration.loadConfiguration(configFile);
-
         final InputStream defConfigStream = plugin.getResource(file);
         if(defConfigStream == null){
             return;
         }
-
         config.setDefaults(YamlConfiguration.loadConfiguration(new InputStreamReader(defConfigStream, StandardCharsets.UTF_8)));
     }
 
@@ -75,7 +73,7 @@ public class CustomConfigSetting {
         try {
             getConfig().save(configFile);
         } catch(IOException ex){
-            plugin.getLogger().log(Level.SEVERE,"Could not save config to" + configFile, ex);
+            plugin.getLogger().log(Level.SEVERE,"(FP)"+"Could not save config to" + configFile, ex);
         }
     }
 
