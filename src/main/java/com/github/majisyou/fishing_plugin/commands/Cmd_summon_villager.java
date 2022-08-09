@@ -32,9 +32,10 @@ public class Cmd_summon_villager implements CommandExecutor {
             try{
                 recipes = com.github.majisyou.fishing_plugin.system.Villager.MakeRecipes();
             }catch (Exception e){
-                plugin.getLogger().info("fisherman.ymlを読み込んだレシピが作成できなかったよ");
+                plugin.getLogger().info("(FP)"+"fisherman.ymlを読み込んだレシピが作成できなかったよ");
             }
-             Player player = (Player) sender;
+
+            Player player = (Player) sender;
 
             if(args.length == 0){
                 Entity Fisher_man = player.getWorld().spawnEntity(player.getLocation(),EntityType.VILLAGER);
@@ -44,33 +45,40 @@ public class Cmd_summon_villager implements CommandExecutor {
                 villager.setVillagerLevel(5);
                 villager.setCustomName(ChatColor.GREEN+"釣りマスター");
                 villager.setCustomNameVisible(true);
-                villager.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(0.01);
+
+                ArmorStand ArmorStand = (ArmorStand) player.getWorld().spawnEntity(player.getLocation(),EntityType.ARMOR_STAND);
+                ArmorStand.setInvisible(true);
+                ArmorStand.setMarker(true);
+                ArmorStand.addPassenger(Fisher_man);
 
                 try {
                     villager.setRecipes(recipes);
 
                 }catch (Exception e){
-                    plugin.getLogger().info(recipes+"を代入できなかった");
+                    plugin.getLogger().info("(FP)"+recipes+"を代入できなかった");
                 }
 
             }
 
             if (args.length==1){
                 Entity entity = Bukkit.getEntity(UUID.fromString(args[0]));
+                if(entity == null){
+                    plugin.getLogger().info("(FP)"+"まずUUIDが違う");
+                    return true;
+                }
+
                 if (entity.getType().equals(EntityType.VILLAGER)){
                     Villager villager = (Villager) entity;
                     try {
                         villager.setRecipes(recipes);
-                        plugin.getLogger().info("フィッシャーマンを変更したよ");
+                        plugin.getLogger().info("(FP)"+"フィッシャーマンを変更したよ");
                     }catch (Exception e){
-                        plugin.getLogger().info(recipes+"を代入できなかった");
+                        plugin.getLogger().info("(FP)"+recipes+"を代入できなかった");
                     }
                 }else {
-                    plugin.getLogger().info("村人がいなかった");
+                    plugin.getLogger().info("(FP)"+"村人がいなかった");
                 }
-
             }
-
         }else {
             plugin.getLogger().info("これはコンソールからは打てないよ");
         }
