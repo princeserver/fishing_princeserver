@@ -31,72 +31,31 @@ public class Player_Close implements Listener {
         //addItemとかいうコマンドが会ったんだが
         //使える？
 
-        if(name.equals("釣りマスター")){
+        if(name.equals("釣りマスター：\"売りたい魚を入れな\"")){
             Inventory inventory = event.getInventory(); //クローズしたインベントリをゲット
             Integer sellvalue = FishGui.SellValue(inventory); //売れたお金の計算
+            FishGui.dropItem(inventory,(Player) event.getPlayer());
             List<Integer> emerald_value = FishGui.cal_emerald(sellvalue); //リキッドエメラルドとエメラルドブロックとエメラルドの数をリスト上に設定
-            List<ItemStack> drop_item = FishGui.dropItem(inventory); //魚以外のアイテムがインベントリ内に合ったら、返すやつ
-
-            Inventory playerInventory = player.getInventory(); //魚以外のアイテムを返す用のインベントリを取得
-            ItemStack[] item = playerInventory.getStorageContents(); //ItemStackのリストを作成、中身がnullだと変換する
-
-            ItemStack emerald = new ItemStack(Material.EMERALD,emerald_value.get(2)); //エメラルドの数の設定
-            ItemStack emeraldBlock = new ItemStack(Material.EMERALD_BLOCK,emerald_value.get(1)); //エメラルドブロックの設定
-            ItemStack Liquid_emerald = new ItemStack(Material.REPEATING_COMMAND_BLOCK,emerald_value.get(0)); //リッキドエメラルドの設定
+            Integer liquidEmerald = emerald_value.get(0);
+            ItemStack Liquid_emerald = new ItemStack(Material.REPEATING_COMMAND_BLOCK,64);
             ItemMeta Liquid_emerald_Meta = Liquid_emerald.getItemMeta(); //リキッドエメラルド用のアイテムメタを取得する！
             Liquid_emerald_Meta.setCustomModelData(1000); //リッキドエメラルドのカスタムモデルデータの設定ここを弄る必要あり！！
+            Liquid_emerald.setItemMeta(Liquid_emerald_Meta);
 
-            int drop_counter = 0;
-
-            for(int i=0; i<item.length; i++){
-                if (item[i]==null){
-                    if(!(emerald_value.get(0)==0)){
-                        player.getInventory().setItem(i,Liquid_emerald);
-                        emerald_value.set(0,0);
-                        //リキッドエメラルドをインベントリに入れる
-                    }
-                    else if(!(emerald_value.get(1)==0)){
-                        player.getInventory().setItem(i,emeraldBlock);
-                        emerald_value.set(1,0);
-                        //エメラルドブロックをインベントリに入れる
-                    }
-                    else if(!(emerald_value.get(2)==0)){
-                        player.getInventory().setItem(i,emerald);
-                        emerald_value.set(2,0);
-                        //エメラルドをインベントリに入れる
-                    }else{
-                        if(drop_counter < drop_item.size()){
-                            player.getInventory().setItem(i,drop_item.get(drop_counter));
-                            drop_counter += 1;
-                            //ドロップアイテムを空いてるインベントリに入れる
-                        }else {
-                            break;
-                        }
-                    }
-                }
+            while (liquidEmerald > 64){
+                //リッキドエメラルドの設定
+                FishGui.AddItemPlayerInventory(Liquid_emerald,(Player) event.getPlayer());
+                liquidEmerald -= 64;
             }
 
-            //もしインベントリが満杯の時アイテムをドロップさせる
-            if(!(emerald_value.get(0)==0)){
-                player.getWorld().dropItem(player.getLocation(),Liquid_emerald);
-                emerald_value.set(0,0);
-                //リキッドエメラルドをドロップする
-            }
-            else if(!(emerald_value.get(1)==0)){
-                player.getWorld().dropItem(player.getLocation(),emeraldBlock);
-                emerald_value.set(1,0);
-                //エメラルドブロックをドロップする
-            }
-            else if(!(emerald_value.get(2)==0)){
-                player.getWorld().dropItem(player.getLocation(),emerald);
-                emerald_value.set(2,0);
-                //エメラルドをドロップする
-            }
+            Liquid_emerald.setAmount(liquidEmerald);
+            ItemStack emerald = new ItemStack(Material.EMERALD,emerald_value.get(2)); //エメラルドの数の設定
+            ItemStack emeraldBlock = new ItemStack(Material.EMERALD_BLOCK,emerald_value.get(1)); //エメラルドブロックの設定
 
-            for (;drop_counter<drop_item.size(); drop_counter++){
-                //空いてるインベントリが無かったらアイテムがドロップする
-                player.getWorld().dropItem(player.getLocation(),drop_item.get(drop_counter));
-            }
+            FishGui.AddItemPlayerInventory(Liquid_emerald,(Player) event.getPlayer());
+            FishGui.AddItemPlayerInventory(emeraldBlock,(Player) event.getPlayer());
+            FishGui.AddItemPlayerInventory(emerald,(Player) event.getPlayer());
+
             if(!(sellvalue==0)){
                 player.sendMessage(sellvalue+"E手に入ったよ");
             }else {
