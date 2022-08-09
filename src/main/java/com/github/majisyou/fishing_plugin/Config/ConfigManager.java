@@ -30,6 +30,11 @@ public class ConfigManager {
     private static Integer rank8;
     private static Integer rank9;
 
+    public static void reload(){
+        config = plugin.getConfig();
+        loadConfig();
+    }
+
 
     public static void loadConfig(){
         servername = config.getString("servername");
