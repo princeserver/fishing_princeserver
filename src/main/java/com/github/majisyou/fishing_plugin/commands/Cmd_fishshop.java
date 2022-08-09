@@ -22,12 +22,11 @@ public class Cmd_fishshop implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if(!(sender instanceof Player)) {
-            plugin.getLogger().info("コンソールからは打てません");
+            plugin.getLogger().info("(FP)"+"コンソールからは打てません");
             return true;
         }
         Player player = (Player) sender;
         FishGui.OpenInventory(player);
-
         return true;
     }
 }
