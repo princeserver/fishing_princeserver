@@ -2,17 +2,17 @@
 
 #id:
 # 1:
-  #name: prince_fish
-  #cm: 10
-  #getExp:
-  #sell_price:
-  #time: all or midnight or day or morning or night
-  #texture_number:
-  #lore:
-  #これは(lore1)
-  #テスト用の(lore2)
-  #テキスト(lore3)
-  #だよ(lore4)
+#name: prince_fish
+#cm: 10
+#getExp:
+#sell_price:
+#time: all or midnight or day or morning or night
+#texture_number:
+#lore:
+#これは(lore1)
+#テスト用の(lore2)
+#テキスト(lore3)
+#だよ(lore4)
 
 id:
   0:
@@ -108,7 +108,7 @@ id:
     name: ゲンセキガクレ
     cm: 25
     getExp: 3
-    sell_price: 3
+    sell_price: 2
     rank: 1
     texture_number: 7
     lore:
@@ -121,7 +121,7 @@ id:
     name: コンゴウカクレ
     cm: 40
     getExp: 3
-    sell_price: 10
+    sell_price: 6
     rank: 3
     texture_number: 8
     lore:
@@ -134,7 +134,7 @@ id:
     name: ツルギウオ
     cm: 80
     getExp: 3
-    sell_price: 3
+    sell_price: 4
     rank: 2
     texture_number: 9
     lore:
@@ -147,7 +147,7 @@ id:
     name: サザナミガイ
     cm: 15
     getExp: 3
-    sell_price: 10
+    sell_price: 2
     rank: 1
     texture_number: 10
     lore:
@@ -186,7 +186,7 @@ id:
     name: クォーツアロワナ
     cm: 35
     getExp: 3
-    sell_price: 3
+    sell_price: 4
     rank: 2
     texture_number: 13
     lore:
@@ -277,7 +277,7 @@ id:
     name: オウゴンマダイ
     cm: 30
     getExp: 3
-    sell_price: 3
+    sell_price: 6
     rank: 3
     texture_number: 20
     lore:
@@ -355,7 +355,7 @@ id:
     name: シーファントム
     cm: 45
     getExp: 3
-    sell_price: 3
+    sell_price: 12
     rank: 4
     texture_number: 26
     lore:
@@ -368,7 +368,7 @@ id:
     name: カワヒラメ
     cm: 20
     getExp: 3
-    sell_price: 3
+    sell_price: 2
     rank: 1
     texture_number: 27
     lore:
@@ -381,7 +381,7 @@ id:
     name: エンバンスナガクレ
     cm: 15
     getExp: 3
-    sell_price: 3
+    sell_price: 2
     rank: 1
     texture_number: 28
     lore:
@@ -394,7 +394,7 @@ id:
     name: コンブナマコ
     cm: 15
     getExp: 3
-    sell_price: 3
+    sell_price: 2
     rank: 1
     texture_number: 29
     lore:
@@ -446,7 +446,7 @@ id:
     name: アローフィッシュ
     cm: 30
     getExp: 3
-    sell_price: 3
+    sell_price: 2
     rank: 1
     texture_number: 33
     lore:
@@ -459,7 +459,7 @@ id:
     name: マリンビー
     cm: 3
     getExp: 3
-    sell_price: 3
+    sell_price: 4
     rank: 1
     texture_number: 34
     lore:
@@ -563,7 +563,7 @@ id:
     name: ソウルドレイク
     cm: 30
     getExp: 3
-    sell_price: 3
+    sell_price: 4
     rank: 2
     texture_number: 42
     lore:
@@ -628,7 +628,7 @@ id:
     name: アンザンガイ
     cm: 6
     getExp: 3
-    sell_price: 3
+    sell_price: 2
     rank: 1
     texture_number: 47
     lore:
@@ -641,7 +641,7 @@ id:
     name: センリョクガイ
     cm: 6
     getExp: 3
-    sell_price: 3
+    sell_price: 2
     rank: 1
     texture_number: 48
     lore:
@@ -654,7 +654,7 @@ id:
     name: カコウガイ
     cm: 6
     getExp: 3
-    sell_price: 3
+    sell_price: 2
     rank: 1
     texture_number: 49
     lore:
@@ -693,7 +693,7 @@ id:
     name: ホシクズザリガニ
     cm: 10
     getExp: 3
-    sell_price: 3
+    sell_price: 4
     rank: 2
     texture_number: 52
     lore:
@@ -732,7 +732,7 @@ id:
     name: コクリュウノツカイ
     cm: 200
     getExp: 3
-    sell_price: 3
+    sell_price: 20
     rank: 5
     texture_number: 55
     lore:
@@ -810,7 +810,7 @@ id:
     name: サンミャククジラ
     cm: 500
     getExp: 3
-    sell_price: 3
+    sell_price: 12
     rank: 4
     texture_number: 61
     lore:
@@ -1173,7 +1173,7 @@ id:
     name: タルクラゲ
     cm: 20
     getExp: 3
-    sell_price: 3
+    sell_price: 2
     rank: 1
     texture_number: 89
     lore:
@@ -1226,7 +1226,7 @@ id:
     name: ジョウオウイカ
     cm: 400
     getExp: 3
-    sell_price: 3
+    sell_price: 6
     rank: 3
     texture_number: 93
     lore:
@@ -1746,7 +1746,7 @@ id:
     name: コケガメ
     cm: 20
     getExp: 3
-    sell_price: 3
+    sell_price: 4
     rank: 2
     texture_number: 133
     lore:
