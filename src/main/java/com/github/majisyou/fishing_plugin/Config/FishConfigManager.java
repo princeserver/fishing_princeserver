@@ -12,30 +12,34 @@ public class FishConfigManager {
     private static FileConfiguration config = new CustomConfigSetting(plugin,"fish.yml").getConfig();
 
     private static String Fish_name;
-    private static String cm;
-    private static String getExp;
-    private static String sell_price;
+    private static Double cm;
+    private static Integer getExp;
+    private static Integer sell_price;
     private static List<String> lore;
-    private static List<String> time;
-    private static String texture_number;
+    private static Integer texture_number;
+    private static Integer rank;
+
+    public static void reload(){
+        config = new CustomConfigSetting(plugin,"fish.yml").getConfig();
+    }
 
     public static void LoadFishConfig(int id){
         String file_path = "id."+id+".";
         Fish_name = config.getString(file_path+"name");
-        cm = config.getString(file_path+"cm");
-        getExp = config.getString(file_path+"getExp");
-        sell_price = config.getString(file_path+"sell_price");
+        cm = config.getDouble(file_path+"cm");
+        getExp = config.getInt(file_path+"getExp");
+        sell_price = config.getInt(file_path+"sell_price");
         lore = config.getStringList(file_path+"lore");
-        time = config.getStringList(file_path+"time");
-        texture_number = config.getString(file_path+"texture_number");
+        texture_number = config.getInt(file_path+"texture_number");
+        rank = config.getInt(file_path+"rank");
     }
 
-    public static String get_cm(){return cm;}
+    public static Double get_cm(){return cm;}
     public static String getName(){return Fish_name;}
-    public static String getGetExp(){return getExp;}
-    public static String getSell_price(){return sell_price;}
+    public static Integer getGetExp(){return getExp;}
+    public static Integer getSell_price(){return sell_price;}
     public static List<String> getLore(){return lore;}
-    public static List<String> getTime(){return time;}
-    public static String getTexture_number(){return texture_number;}
+    public static Integer getTexture_number(){return texture_number;}
+    public static Integer getRank(){return rank;}
 
 }
