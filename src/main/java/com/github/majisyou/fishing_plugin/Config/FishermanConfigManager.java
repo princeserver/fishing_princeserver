@@ -17,12 +17,18 @@ public class FishermanConfigManager {
     private static Integer sell_amount;
     private static Integer sell_CustomModelData;
     private static List<Integer> sell_enchants;
+    private static String sell_DisplayName;
 
     private static String buy;
     private static String buy_type;
     private static Integer buy_amount;
     private static Integer buy_CustomModelData;
     private static List<Integer> buy_enchants;
+    private static String buy_DisplayName;
+
+    public static void reload(){
+        config = new CustomConfigSetting(plugin,"fisher_man.yml").getConfig();
+    }
 
     public static void loadFishermanRecipes(){
         recipes = config.getStringList("");
@@ -34,21 +40,20 @@ public class FishermanConfigManager {
         sell_amount=config.getInt(path+".sell.amount");
         sell_CustomModelData=config.getInt(path+".sell.CustomModelData");
         sell_enchants=config.getIntegerList(path+".sell.enchants");
+        sell_DisplayName = config.getString(path+".sell.DisplayName");
         buy_type=config.getString(path+".buy.type");
         buy_amount=config.getInt(path+".buy.amount");
         buy_CustomModelData=config.getInt(path+".buy.CustomModelData");
         buy_enchants=config.getIntegerList(path+".buy.enchants");
+        buy_DisplayName = config.getString(path+".buy.DisplayName");
     }
 
-    public static List<String> getRecipes(){return recipes;}
     public static String getSell_type(){return sell_type;}
     public static Integer getSell_amount(){return sell_amount;}
     public static Integer getSell_CustomModelData(){return sell_CustomModelData;}
-    public static List<Integer> getSell_enchants(){return sell_enchants;}
 
     public static String getBuy_type(){return buy_type;}
     public static Integer getBuy_amount(){return buy_amount;}
     public static Integer getBuy_CustomModelData(){return buy_CustomModelData;}
-    public static List<Integer> getBuy_enchants(){return buy_enchants;}
 
 }
