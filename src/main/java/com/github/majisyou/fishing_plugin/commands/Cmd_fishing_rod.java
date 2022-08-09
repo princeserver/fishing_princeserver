@@ -21,7 +21,7 @@ public class Cmd_fishing_rod implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if(!(sender instanceof Player player)){
-            plugin.getLogger().info("このコマンドはコンソールから打てないよ");
+            plugin.getLogger().info("(FP)"+"このコマンドはコンソールから打てないよ");
             return true;
         }
         if(player.getInventory().getItemInMainHand().getType().equals(Material.FISHING_ROD)){
